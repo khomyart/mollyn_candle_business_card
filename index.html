@@ -148,6 +148,38 @@
             </div>
         </div>
         <div class="fullscreen-section p-4">
+            <div class="main-section-outter products-section">
+                <div class="d-flex justify-content-center products-section-header">
+                    Our products
+                </div>
+                <div class="d-flex justify-content-start products-section-subheader">
+                    Select something from what we offer
+                </div>
+                <div class="d-flex flex-row">
+                    <div class="col-12 col-md-6 products-section-pills-holder">
+                        <div class="col-12 d-flex flex-wrap">
+                            <div v-for="(product, index) in products" 
+                                class="products-section-pill-element"
+                                @click="selectProduct(index)"
+                                :class="{
+                                    'products-section-pill-element-activated': product.name === selectedProduct.name
+                                }"
+                            >
+                                {{product.name}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <product-detail 
+                            :name="selectedProduct.name"
+                            :img="selectedProduct.img"
+                            :description="selectedProduct.description"
+                        ></product-detail>
+                    </div>
+                </div>                
+            </div>
+        </div>
+        <div class="fullscreen-section p-4">
             <div class="main-section-outter">
 
             </div>
