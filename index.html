@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mollyn Candle</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="./styles/app.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <div class="background-image"></div>
+        <div class="background-color"></div>
+        <div class="fullscreen-section d-flex justify-content-center align-items-center p-4">
+            
+            <div class="main-section-outter">
+                <div class="language-switcher">
+                    <span>EN</span>
+                    |
+                    <span>SW</span>
+                </div>
+                <div class="logo">
+                    <img src="assets/MollynCandleLableRed.png" alt="">
+                </div>
+                <div class="divider">
+                    <div class="description">
+                        handmade candles
+                    </div>
+                </div>
+                
+                <div class="candles-logo">
+                    <img src="assets/candles.png" alt="">
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li class="menu-section">
+                            <div class="icon-holder">
+                                <img src="./assets/hart_icon.png">
+                                <img src="./assets/activated_hart_icon.png">
+                            </div>
+                            <span>
+                                About us
+                            </span>
+                        </li>
+                        <li class="menu-section">
+                            <div class="icon-holder">
+                                <img src="./assets/hart_icon.png">
+                                <img src="./assets/activated_hart_icon.png">
+                            </div>
+                            <span>
+                                Production
+                            </span> 
+                        </li>
+                        <li class="menu-section">
+                            <div class="icon-holder">
+                                <img src="./assets/hart_icon.png">
+                                <img src="./assets/activated_hart_icon.png">
+                            </div>
+                            <span>
+                                Contacts
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="separator">
+            <div></div>
+        </div>
+        <div class="fullscreen-section p-4">
+            <div class="about-us-background-image"></div>
+            <div class="main-section-outter about-us-section">
+                <div class="about-us-section-description">
+                    <p>WE</p>
+                    <p>CREATE</p>
+                    <p>ATMOSPHERE</p>
+                    <div class="about-us-section-description-for">
+                        <div>FOR</div>
+                        <div>
+                            <div class="about-us-section-for-description-holder">
+                                <div class="about-us-section-for-description">Relaxing.</div>
+                            </div>
+                            <div class="about-us-section-for-description-holder">
+                                <div class="about-us-section-for-description">Sleeping.</div>
+                            </div>
+                            <div class="about-us-section-for-description-holder">
+                                <div class="about-us-section-for-description">Study.</div>
+                            </div>
+                            <div class="about-us-section-for-description-holder">
+                                <div class="about-us-section-for-description">Working.</div>
+                            </div>
+                            <div class="about-us-section-for-description-holder">
+                                <div class="about-us-section-for-description">Medetation.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-us-section-flame">
+                    <img src="./assets/flame.png" alt="">
+                </div>
+                <div class="about-us-section-flame">
+                    <img src="./assets/flame3.png" alt="">
+                </div>
+                <div class="about-us-section-flame">
+                    <img src="./assets/flame2.png" alt="">
+                </div>
+                <div class="about-us-section-devider-holder">
+                    <div class="about-us-section-devider"></div>
+                </div>
+                <div class="about-us-section-additional-text-how-holder">
+                    <div class="about-us-section-additional-text-how">
+                        How?
+                    </div>
+                </div>
+                <div class="about-us-section-additional-text-learn-more-holder">
+                    <div class="about-us-section-additional-text-learn-more">
+                        scroll down or press <span class="about-us-fire-icon">🔥</span> to learn more
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="separator">
+            <div></div>
+        </div>
+        <div class="fullscreen-section p-4">
+            <div class="main-section-outter description-section">
+                <div class="description-section-header">
+                    <p>Candles!</p>
+                    <p>as labor of our <span>love</span> and...</p>
+                    <p class="description-section-offer">
+                        we offer you something special
+                    </p>
+                </div>
+                <div class="description-image-holder">
+                    <image-component :source="descriptionImageSrc" transitionName="image"></image-component>
+                </div>
+                <div class="description-menu">
+                    <ul>
+                        <description-benefits-component 
+                            v-for="(benefit, index) in descriptionBenefitsList" :key="index"
+                            :name="benefit.name"
+                            :is-active="benefit.imgSrc == descriptionImageSrc ? true : false"
+                            @click="showImage(benefit.imgSrc)"
+                        ></description-benefits-component>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="fullscreen-section p-4">
+            <div class="main-section-outter">
+
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
+<script src="./scripts/vue.js"></script>
+<script src="./scripts/main.js"></script>
+</html>
