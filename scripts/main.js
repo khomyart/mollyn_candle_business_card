@@ -2,16 +2,19 @@ document.body.onscroll = () => {
     console.log(window.scrollY)
 }
 
-let flames = document.querySelectorAll(".about-us-section-flame");
-flames[0].classList.add('flame-animation')
+let aboutUsSection = document.querySelector(".about-us-section");
+let amountOfFlames = 3;
 
-setTimeout(()=>{
-    flames[1].classList.add('flame-animation')
-}, 3000)
+for (let i = 1; i <= amountOfFlames; i++) {
+    let flame = document.createElement("div");
+    flame.classList.add("about-us-section-flame");
+    flame.classList.add(`flame-${i}`);
+    aboutUsSection.appendChild(flame);
+    setTimeout(()=>{
+        flame.classList.add("flame-animation");
+    }, 2000 * i - 1)
+}
 
-setTimeout(()=>{
-    flames[2].classList.add('flame-animation')
-}, 6000)
 
 let atmospheres = document.querySelectorAll(".about-us-section-for-description");
 let appearingDelay = 700; //ms

@@ -359,25 +359,42 @@
 
 .about-us-section-flame {
     position: absolute;
-    top: 104%;
+    top: 100%;
     left: 50%;
     transform: translate(-50%, -100%);
     width: 100%;
     opacity: 0;
+    height: 300px;
+    --flame-size: 800px;
+}
+.flame-1 {
+    background-image: url("/assets/flame_tileless.png");
+    background-position: bottom;
+    background-size: var(--flame-size);
+    background-repeat: repeat-x;
+}
+.flame-2 {
+    background-image: url("/assets/flame2_tileless.png");
+    background-position: bottom;
+    background-size: var(--flame-size);
+    background-repeat: repeat-x;
+}
+.flame-3 {
+    background-image: url("/assets/flame3_tileless.png");
+    background-position: bottom;
+    background-size: var(--flame-size);
+    background-repeat: repeat-x;
 }
 
-.about-us-section-flame img {
-    width: 100%;
-}
 .flame-animation {
-    animation: infinite 4s flame-animation;
+    animation: infinite 6s flame-animation;
 }
 
 @keyframes flame-animation {
     0% {
         opacity: 0;
     }
-    50% {
+    33% {
         opacity: 1;
     }
     100% {
