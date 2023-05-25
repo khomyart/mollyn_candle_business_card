@@ -1,5 +1,12 @@
+let topMenu = document.querySelector(".top-menu");
+let aboutUsFirstSection = document.querySelector("#about-us-section");
+
 document.body.onscroll = () => {
-    console.log(window.scrollY)
+    if (aboutUsFirstSection.getBoundingClientRect().top < 0.3) {
+        topMenu.classList.replace("top-menu-hide", "top-menu-show");
+    } else {
+        topMenu.classList.replace("top-menu-show", "top-menu-hide");
+    }
 }
 
 let aboutUsSection = document.querySelector(".about-us-section");
