@@ -1,5 +1,6 @@
 const mainComponent = {
     data: () => ({
+        showHiddenMenu: false,
         language: "sw",
         // language: "en",
         slideInterval: null,

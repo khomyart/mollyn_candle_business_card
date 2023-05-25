@@ -7,7 +7,7 @@
     <title>Mollyn Candle</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <link rel="stylesheet" href="./styles/app.css">
-    <link rel="stylesheet" href="./styles/menu.css">
+    <link rel="stylesheet" href="./styles/top-menu.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,219 +15,251 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
 </head>
-<body>
-    <div id="app">
-        <div class="background-image"></div>
-        <div class="background-color"></div>
-        <nav class="top-menu top-menu-hide">
-            <div class="top-menu-hide-button">
-                <button>123</button>
+<body id="app">
+    <div class="app-wrapper disable-scroll" :class="{'disable-scroll': showHiddenMenu === true}">
+        <div class="holder">
+            <div class="background-image"></div>
+            <div class="background-color"></div>
+    
+            <div v-if="showHiddenMenu === true" class="top-menu-hidden-window">
+    
             </div>
-            <div class="language-switcher">
-                <span 
-                    :class="{'language-switcher-active': language === 'en'}"
-                    @click="language = 'en'"
-                >EN</span>
-                |
-                <span 
-                    :class="{'language-switcher-active': language === 'sw'}"
-                    @click="language = 'sw'"
-                >SW</span>
-            </div>
-            <ul class="top-menu-hrefs">
-                <li><a href="#home-section">{{ quote('home', true) }}</a></li>
-                <li><a href="#about-us-section">{{ quote('about us', true) }}</a></li>
-                <li><a href="#offer-section">{{ quote('what we offer', true) }}</a></li>
-                <li><a href="#products-section">{{ quote('products', true) }}</a></li>
-                <li><a href="#contacts-section">{{ quote('contacts', true) }}</a></li>
-            </ul>
-        </nav>
-        <div id="home-section" class="fullscreen-section d-flex justify-content-center align-items-center">
-            <div class="main-section-outter home-section">
-                <div class="language-switcher">
-                    <span 
-                        :class="{'language-switcher-active': language === 'en'}"
-                        @click="language = 'en'"
-                    >EN</span>
-                    |
-                    <span 
-                        :class="{'language-switcher-active': language === 'sw'}"
-                        @click="language = 'sw'"
-                    >SW</span>
-                </div>
-                <div class="logo">
-                    <img src="assets/MollynCandleLableRed.png" alt="">
-                </div>
-                <div class="divider">
-                    <div class="description">
-                        {{ quote('home-made candles') }}
-                    </div>
+            <nav class="top-menu">
+                <div class="top-menu-logo">
+                    <a href="#home-section">
+                        <img src="./assets/MollynCandleLableRed.png" alt="">
+                    </a>
                 </div>
                 
-                <div class="candles-logo">
-                    <img src="assets/candles.png" alt="">
+                <ul class="top-menu-hrefs">
+                    <li><a href="#about-us-section">{{ quote('about us', true) }}</a></li>
+                    <li><a href="#offer-section">{{ quote('what we offer', true) }}</a></li>
+                    <li><a href="#products-section">{{ quote('products', true) }}</a></li>
+                    <li><a href="#contacts-section">{{ quote('contacts', true) }}</a></li>
+                    <li>
+                        <div class="top-menu-language-switcher">
+                            <span 
+                                :class="{'language-switcher-active': language === 'en'}"
+                                @click="language = 'en'"
+                            >EN</span>
+                            |
+                            <span 
+                                :class="{'language-switcher-active': language === 'sw'}"
+                                @click="language = 'sw'"
+                            >SW</span>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="top-menu-mobile">
+                <div class="col-3 d-flex justify-content-start"> 
+                    <div class="top-menu-logo" @click="showHiddenMenu = true">
+                        <img src="./assets/MollynCandleLableRed.png" alt="">
+                    </div>
                 </div>
-                <div class="menu">
-                    <ul>
-                        <li class="menu-section">
-                            <div class="icon-holder">
-                                <img src="./assets/hart_icon.png">
-                                <img src="./assets/activated_hart_icon.png">
-                            </div>
-                            <a href="#about-us-section">{{ quote('about us', true) }}</a>
-                        </li>
-                        <li class="menu-section">
-                            <div class="icon-holder">
-                                <img src="./assets/hart_icon.png">
-                                <img src="./assets/activated_hart_icon.png">
-                            </div>
-                            <a href="#offer-section">{{ quote('what we offer', true) }}</a>
-                        </li>
-                        <li class="menu-section">
-                            <div class="icon-holder">
-                                <img src="./assets/hart_icon.png">
-                                <img src="./assets/activated_hart_icon.png">
-                            </div>
-                            <a href="#products-section">{{ quote('products', true) }}</a>
-                        </li>
-                        <li class="menu-section">
-                            <div class="icon-holder">
-                                <img src="./assets/hart_icon.png">
-                                <img src="./assets/activated_hart_icon.png">
-                            </div>
-                            <a href="#contacts-section">{{ quote('contacts', true) }}</a>
-                        </li>
-                    </ul>
+                <div class="col-6 d-flex justify-content-center">About us</div>
+                <div class="col-3 d-flex justify-content-end">
+                    <div class="top-menu-language-switcher">
+                        <span 
+                            :class="{'language-switcher-active': language === 'en'}"
+                            @click="language = 'en'"
+                        >EN</span>
+                        |
+                        <span 
+                            :class="{'language-switcher-active': language === 'sw'}"
+                            @click="language = 'sw'"
+                        >SW</span>
+                    </div>
+                </div>
+            </nav>
+            <div id="home-section" class="fullscreen-section d-flex justify-content-center align-items-center">
+                <div class="main-section-outter home-section">
+                    <div class="language-switcher">
+                        <span 
+                            :class="{'language-switcher-active': language === 'en'}"
+                            @click="language = 'en'"
+                        >EN</span>
+                        |
+                        <span 
+                            :class="{'language-switcher-active': language === 'sw'}"
+                            @click="language = 'sw'"
+                        >SW</span>
+                    </div>
+                    <div class="logo">
+                        <img src="assets/MollynCandleLableRed.png" alt="">
+                    </div>
+                    <div class="divider">
+                        <div class="description">
+                            {{ quote('home-made candles') }}
+                        </div>
+                    </div>
+                    
+                    <div class="candles-logo">
+                        <img src="assets/candles.png" alt="">
+                    </div>
+                    <div class="menu">
+                        <ul>
+                            <li class="menu-section">
+                                <div class="icon-holder">
+                                    <img src="./assets/hart_icon.png">
+                                    <img src="./assets/activated_hart_icon.png">
+                                </div>
+                                <a href="#about-us-section">{{ quote('about us', true) }}</a>
+                            </li>
+                            <li class="menu-section">
+                                <div class="icon-holder">
+                                    <img src="./assets/hart_icon.png">
+                                    <img src="./assets/activated_hart_icon.png">
+                                </div>
+                                <a href="#offer-section">{{ quote('what we offer', true) }}</a>
+                            </li>
+                            <li class="menu-section">
+                                <div class="icon-holder">
+                                    <img src="./assets/hart_icon.png">
+                                    <img src="./assets/activated_hart_icon.png">
+                                </div>
+                                <a href="#products-section">{{ quote('products', true) }}</a>
+                            </li>
+                            <li class="menu-section">
+                                <div class="icon-holder">
+                                    <img src="./assets/hart_icon.png">
+                                    <img src="./assets/activated_hart_icon.png">
+                                </div>
+                                <a href="#contacts-section">{{ quote('contacts', true) }}</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="separator">
-            <div></div>
-        </div>
-        <div id="about-us-section" class="fullscreen-section">
-            <div class="about-us-background-image"></div>
-            <div class="main-section-outter about-us-section">
-                <div class="about-us-section-description">
-                    <span>{{ quote('we') }}</span>
-                    <span>{{ quote('create') }}</span>
-                    <span>{{ quote('atmosphere') }}</span>
-                    <div class="about-us-section-description-for">
-                        <div>{{ quote('for') }}</div>
-                        <div>
-                            <div class="about-us-section-for-description-holder">
-                                <div class="about-us-section-for-description">{{quote('relaxing', true)}}.</div>
-                            </div>
-                            <div class="about-us-section-for-description-holder">
-                                <div class="about-us-section-for-description">{{quote('sleeping', true)}}.</div>
-                            </div>
-                            <div class="about-us-section-for-description-holder">
-                                <div class="about-us-section-for-description">{{quote('study', true)}}.</div>
-                            </div>
-                            <div class="about-us-section-for-description-holder">
-                                <div class="about-us-section-for-description">{{quote('working', true)}}.</div>
-                            </div>
-                            <div class="about-us-section-for-description-holder">
-                                <div class="about-us-section-for-description">{{quote('meditation', true)}}.</div>
+            <div class="separator">
+                <div></div>
+            </div>
+            <div id="about-us-section" class="fullscreen-section">
+                <div class="about-us-background-image"></div>
+                <div class="main-section-outter about-us-section">
+                    <div class="about-us-section-description">
+                        <span>{{ quote('we') }}</span>
+                        <span>{{ quote('create') }}</span>
+                        <span>{{ quote('atmosphere') }}</span>
+                        <div class="about-us-section-description-for">
+                            <div>{{ quote('for') }}</div>
+                            <div>
+                                <div class="about-us-section-for-description-holder">
+                                    <div class="about-us-section-for-description">{{quote('relaxing', true)}}.</div>
+                                </div>
+                                <div class="about-us-section-for-description-holder">
+                                    <div class="about-us-section-for-description">{{quote('sleeping', true)}}.</div>
+                                </div>
+                                <div class="about-us-section-for-description-holder">
+                                    <div class="about-us-section-for-description">{{quote('study', true)}}.</div>
+                                </div>
+                                <div class="about-us-section-for-description-holder">
+                                    <div class="about-us-section-for-description">{{quote('working', true)}}.</div>
+                                </div>
+                                <div class="about-us-section-for-description-holder">
+                                    <div class="about-us-section-for-description">{{quote('meditation', true)}}.</div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="about-us-section-devider-holder">
-                    <div class="about-us-section-devider"></div>
-                </div>
-                <div class="about-us-section-additional-text-how-holder">
-                    <div class="about-us-section-additional-text-how">
-                        {{ quote('how', true) }}?
+                    <div class="about-us-section-devider-holder">
+                        <div class="about-us-section-devider"></div>
                     </div>
-                </div>
-                <div class="about-us-section-additional-text-learn-more-holder">
-                    <div class="about-us-section-additional-text-learn-more">
-                        {{ quote('scroll down or press') }}
-                            <a class="about-us-fire-icon" href="#offer-section">🔥</a>
-                        {{ quote('to learn more') }}
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="separator">
-            <div></div>
-        </div>
-        <div id="offer-section" class="fullscreen-section">
-            <div class="main-section-outter description-section">
-                <div class="description-section-header">
-                    <p>{{ quote('candles', true) }}!</p>
-                    <p class="description-section-labor"
-                    :class="{
-                        'description-section-labor-sw-position': language === 'sw',
-                        'description-section-labor-en-position': language === 'en',
-                    }">
-                        {{ quote('thanks to labor of our', true) }} <span>{{ quote('love') }}</span> ...
-                    </p>
-                    <p class="description-section-offer"
-                    :class="{
-                        'description-section-offer-sw-position': language === 'sw',
-                        'description-section-offer-en-position': language === 'en',
-                    }">
-                        {{ quote('we offer you something special') }}
-                    </p>
-                </div>
-                <div class="description-image-holder">
-                    <image-component 
-                        :source="descriptionImageSrc" 
-                        transitionName="image"
-                    ></image-component>
-                </div>
-                <div class="description-menu">
-                    <ul>
-                        <description-benefits-component 
-                            v-for="(benefit, index) in descriptionBenefitsList" :key="index"
-                            :name="quote(benefit.name, true)"
-                            :is-active="benefit.imgSrc == descriptionImageSrc ? true : false"
-                            @click="showImage(benefit.imgSrc)"
-                        ></description-benefits-component>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div id="products-section" class="fullscreen-section">
-            <div class="main-section-outter products-section">
-                <div class="d-flex justify-content-center products-section-header">
-                    {{ quote('our products', true) }}
-                </div>
-                <div class="d-flex justify-content-start products-section-subheader">
-                    {{ quote('select something from what we offer', true) }}
-                </div>
-                <div class="d-flex flex-row">
-                    <div class="col-12 col-md-6 products-section-pills-holder">
-                        <div class="col-12 d-flex flex-wrap">
-                            <div v-for="(product, index) in products" 
-                                class="products-section-pill-element"
-                                @click="selectProduct(index)"
-                                :class="{
-                                    'products-section-pill-element-activated': product.name[language] === selectedProduct.name[language]
-                                }"
-                            >
-                                {{product.name[language]}}
-                            </div>
+                    <div class="about-us-section-additional-text-how-holder">
+                        <div class="about-us-section-additional-text-how">
+                            {{ quote('how', true) }}?
                         </div>
                     </div>
-                    <div class="col-12 col-md-6">
-                        <product-detail 
-                            :name="selectedProduct.name[language]"
-                            :img="selectedProduct.img"
-                            :description="selectedProduct.description[language]"
-                            :lang="language"
-                        ></product-detail>
+                    <div class="about-us-section-additional-text-learn-more-holder">
+                        <div class="about-us-section-additional-text-learn-more">
+                            {{ quote('scroll down or press') }}
+                                <a class="about-us-fire-icon" href="#offer-section">🔥</a>
+                            {{ quote('to learn more') }}
+                        </div>
                     </div>
-                </div>                
+                </div>
             </div>
-        </div>
-        <div id="contacts-section" class="fullscreen-section">
-            <div class="main-section-outter">
-
+            <div class="separator">
+                <div></div>
+            </div>
+            <div id="offer-section" class="fullscreen-section">
+                <div class="main-section-outter description-section">
+                    <div class="description-section-header">
+                        <p>{{ quote('candles', true) }}!</p>
+                        <p class="description-section-labor"
+                        :class="{
+                            'description-section-labor-sw-position': language === 'sw',
+                            'description-section-labor-en-position': language === 'en',
+                        }">
+                            {{ quote('thanks to labor of our', true) }} <span>{{ quote('love') }}</span> ...
+                        </p>
+                        <p class="description-section-offer"
+                        :class="{
+                            'description-section-offer-sw-position': language === 'sw',
+                            'description-section-offer-en-position': language === 'en',
+                        }">
+                            {{ quote('we offer you something special') }}
+                        </p>
+                    </div>
+                    <div class="description-image-holder">
+                        <image-component 
+                            :source="descriptionImageSrc" 
+                            transitionName="image"
+                        ></image-component>
+                    </div>
+                    <div class="description-menu">
+                        <ul>
+                            <description-benefits-component 
+                                v-for="(benefit, index) in descriptionBenefitsList" :key="index"
+                                :name="quote(benefit.name, true)"
+                                :is-active="benefit.imgSrc == descriptionImageSrc ? true : false"
+                                @click="showImage(benefit.imgSrc)"
+                            ></description-benefits-component>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div id="products-section" class="fullscreen-section">
+                <div class="main-section-outter products-section">
+                    <div class="d-flex justify-content-center products-section-header">
+                        {{ quote('our products', true) }}
+                    </div>
+                    <div class="d-flex justify-content-start products-section-subheader">
+                        {{ quote('select something from what we offer', true) }}
+                    </div>
+                    <div class="d-flex flex-row">
+                        <div class="col-12 col-md-6 products-section-pills-holder">
+                            <div class="col-12 d-flex flex-wrap">
+                                <div v-for="(product, index) in products" 
+                                    class="products-section-pill-element"
+                                    @click="selectProduct(index)"
+                                    :class="{
+                                        'products-section-pill-element-activated': product.name[language] === selectedProduct.name[language]
+                                    }"
+                                >
+                                    {{product.name[language]}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <product-detail 
+                                :name="selectedProduct.name[language]"
+                                :img="selectedProduct.img"
+                                :description="selectedProduct.description[language]"
+                                :lang="language"
+                            ></product-detail>
+                        </div>
+                    </div>                
+                </div>
+            </div>
+            <div id="contacts-section" class="fullscreen-section">
+                <div class="main-section-outter">
+    
+                </div>
             </div>
         </div>
     </div>
+
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
