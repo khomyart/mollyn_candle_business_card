@@ -5,30 +5,39 @@ function getOffset(el) {
         top: rect.top + window.scrollY
     };
 }
-let screenOrientation = '';
-switch (screen.orientation.type) {
-    case "landscape-primary":
-    case "landscape-secondary":
-        screenOrientation = 'lanscape';
-        break;
-    case "portrait-secondary":
-    case "portrait-primary":
-        screenOrientation = 'portrait';
-        break;
+
+function getScreenOrientation() {
+    let screenOrientation = '';
+
+    switch (screen.orientation.type) {
+        case "landscape-primary":
+        case "landscape-secondary":
+            screenOrientation = 'lanscape';
+            break;
+        case "portrait-secondary":
+        case "portrait-primary":
+            screenOrientation = 'portrait';
+            break;
+    }
+
+    return screenOrientation;
 }
 
 /**
- * Menu scroll
+ * Menu show
  */
 let topMenu = document.querySelector(".top-menu");
+let topMenuMobile = document.querySelector(".top-menu-mobile");
+let applicationHolder = document.querySelector("#app");
+
 let aboutUsFirstSection = document.querySelector("#about-us-section");
 
-if (screenOrientation === 'portrait') {
-    topMenu.classList.add("top-menu-show");
+if (getScreenOrientation() === 'portrait') {
+    topMenuMobile.style.top = '0';
 }
 
-document.body.onscroll = () => {
-    if (screenOrientation === 'lanscape') {
+applicationHolder.addEventListener('scroll', () => {
+    if (getScreenOrientation() === 'lanscape') {
         if (window.scrollY > getOffset(aboutUsFirstSection).top - 10) {
             topMenu.classList.add("top-menu-show");
             topMenu.classList.remove("top-menu-hide");
@@ -39,7 +48,7 @@ document.body.onscroll = () => {
             }
         }
     }
-}
+}) 
 
 /**
  * Flame

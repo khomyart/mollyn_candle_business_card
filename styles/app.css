@@ -1,30 +1,36 @@
+
+/* */
+
 * {
     padding: 0;
     margin: 0;
     list-style-type: none;
     font-family: 'Quicksand', sans-serif;
     color: rgb(49, 0, 57);
+    box-sizing: border-box;
 }
 
 body {
-    width: 100%;
+    width: 100vw;
     height: 100vh;
 }
 
-.app-wrapper {
+.application-holder{
     width: 100%;
-    position: relative;
     height: 100%;
+    overflow: auto;
+    scroll-behavior: smooth;
 }
 
-.holder {
+.content-container {
     width: 100%;
+    height: fit-content;
     position: relative;
 }
 
 .fullscreen-section {
     width: 100%;
-    min-height: fit-content;
+    height: fit-content;
     display: flex;
     justify-content: center;
     position: relative;
@@ -461,6 +467,7 @@ body {
     position: relative;
     font-size: 100%;
     font-style: italic;
+    width: fit-content;
 }
 .description-section-labor-en-position {
     top: -1.9em;

@@ -375,13 +375,46 @@ const mainComponent = {
         },
     },
     mounted() {
-        //descriptionImageSrc
+        //switching slides of benefits
         let amountOfBenefitsItems = this.descriptionBenefitsList.length;
         let index = 1;
         this.slideInterval = setInterval(()=>{
             this.descriptionImageSrc = this.descriptionBenefitsList[index].imgSrc;
             index = index + 1 === amountOfBenefitsItems ? 0 : index + 1;
         }, 5000)
+
+        let homeSection = document.querySelector("#home-section");
+        let aboutUsSection = document.querySelector("#about-us-section");
+        let offerSection = document.querySelector("#offer-section");
+        let productsSection = document.querySelector("#products-section");
+        let contactsSection = document.querySelector("#contacts-section");
+        
+        /**
+         * Scroll observer
+         */
+        createObserver();
+        
+        function createObserver() {
+            let observer;
+          
+            let options = {
+              root: null,
+              rootMargin: "0px",
+              threshold: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+            };
+          
+            observer = new IntersectionObserver(handleIntersect, options);
+            observer.observe(homeSection);
+            observer.observe(aboutUsSection);
+          }
+        
+        function handleIntersect(entries, observer) {
+            entries.forEach(entry => {
+                console.log(entry.target.id)
+                console.log(entry.intersectionRatio)
+                console.log(entry.isIntersecting)
+            });
+        }
     }
 };
 
@@ -462,19 +495,9 @@ const app = createApp(mainComponent)
         leave: false,
         timeOut: null,
         product: {
-            name: "Fluff yFluffy Fluffy",
-            img: "./assets/products/epple.jpg",
-            description: `
-            What is heat? Coziness, the scent of a candle and the flickering of the flame 🕯 <br/>
-            Thanks to natural ingredients, our candles are completely safe and environmentally friendly 🕊️ <br/>
-            We would like to present our apple and jasmine scented candles decorated with dried flowers 🌸 <br/>
-            The delicate floral scent will fill your home with the scent of spring in just a few minutes ✨ <br/>
-            -Natural soy wax from the USA. <br/>
-            -A fragrance of the highest quality, made in France. <br/>
-            -200 ml. <br/>
-            -The candle burns for 40 hours. <br/>
-            - Price SEK 180. <br/>
-            `
+            name: "",
+            img: "",
+            description: ``
         },
     }), 
     watch: {
@@ -505,6 +528,11 @@ const app = createApp(mainComponent)
             }, 400)
         }
     },
+    mounted() {
+        this.product.name = this.name;
+        this.product.img = this.img;
+        this.product.description = this.description;
+    }
 })
 
 .mount("#app");
