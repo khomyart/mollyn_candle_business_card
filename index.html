@@ -232,21 +232,23 @@
                             {{ quote('we offer you something special') }}
                         </p>
                     </div>
-                    <div class="description-image-holder">
-                        <image-component 
-                            :source="descriptionImageSrc" 
-                            transitionName="image"
-                        ></image-component>
-                    </div>
-                    <div class="description-menu">
-                        <ul>
-                            <description-benefits-component 
-                                v-for="(benefit, index) in descriptionBenefitsList" :key="index"
-                                :name="quote(benefit.name, true)"
-                                :is-active="benefit.imgSrc == descriptionImageSrc ? true : false"
-                                @click="showImage(benefit.imgSrc)"
-                            ></description-benefits-component>
-                        </ul>
+                    <div class="description-menu-and-image-wrapper">
+                        <div class="description-image-holder">
+                            <image-component 
+                                :source="descriptionImageSrc" 
+                                transitionName="image"
+                            ></image-component>
+                        </div>
+                        <div class="description-menu">
+                            <ul>
+                                <description-benefits-component 
+                                    v-for="(benefit, index) in descriptionBenefitsList" :key="index"
+                                    :name="quote(benefit.name, true)"
+                                    :is-active="benefit.imgSrc == descriptionImageSrc ? true : false"
+                                    @click="showImage(benefit.imgSrc)"
+                                ></description-benefits-component>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -258,7 +260,7 @@
                     <div class="d-flex justify-content-start products-section-subheader">
                         {{ quote('select something from what we offer', true) }}
                     </div>
-                    <div class="d-flex flex-row">
+                    <div class="d-flex flex-column flex-md-row mb-4">
                         <div class="col-12 col-md-6 products-section-pills-holder">
                             <div class="col-12 d-flex flex-wrap">
                                 <div v-for="(product, index) in products" 
