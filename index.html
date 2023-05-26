@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="./styles/app.css">
     <link rel="stylesheet" href="./styles/top-menu.css">
+    <link rel="stylesheet" href="./styles/adaptive.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -77,7 +78,7 @@
                         <img src="./assets/MollynCandleLableRed.png" alt="">
                     </div>
                 </div>
-                <div class="col-6 d-flex justify-content-center">About us</div>
+                <div class="col-6 d-flex justify-content-center"></div>
                 <div class="col-3 d-flex justify-content-end">
                     <div class="top-menu-language-switcher">
                         <span 
@@ -160,41 +161,51 @@
                     <div class="about-us-section-description">
                         <span>{{ quote('we') }}</span>
                         <span>{{ quote('create') }}</span>
-                        <span>{{ quote('atmosphere') }}</span>
+                        <span>
+                            <span>
+                                {{ quote('atmosphere') }}
+                            </span>
+                        </span>
                         <div class="about-us-section-description-for">
-                            <div>{{ quote('for') }}</div>
-                            <div>
-                                <div class="about-us-section-for-description-holder">
-                                    <div class="about-us-section-for-description">{{quote('relaxing', true)}}.</div>
-                                </div>
-                                <div class="about-us-section-for-description-holder">
-                                    <div class="about-us-section-for-description">{{quote('sleeping', true)}}.</div>
-                                </div>
-                                <div class="about-us-section-for-description-holder">
-                                    <div class="about-us-section-for-description">{{quote('study', true)}}.</div>
-                                </div>
-                                <div class="about-us-section-for-description-holder">
-                                    <div class="about-us-section-for-description">{{quote('working', true)}}.</div>
-                                </div>
-                                <div class="about-us-section-for-description-holder">
-                                    <div class="about-us-section-for-description">{{quote('meditation', true)}}.</div>
+                            <div class="about-us-section-descriptions-and-for-holder">
+                                <div class="for">{{ quote('for') }}</div>
+                                <div class="about-us-section-descriptions-holder">
+                                    <div class="about-us-section-for-description-holder">
+                                        <div class="about-us-section-for-description">{{quote('relaxing', true)}}.</div>
+                                    </div>
+                                    <div class="about-us-section-for-description-holder">
+                                        <div class="about-us-section-for-description">{{quote('sleeping', true)}}.</div>
+                                    </div>
+                                    <div class="about-us-section-for-description-holder">
+                                        <div class="about-us-section-for-description">{{quote('study', true)}}.</div>
+                                    </div>
+                                    <div class="about-us-section-for-description-holder">
+                                        <div class="about-us-section-for-description">{{quote('working', true)}}.</div>
+                                    </div>
+                                    <div class="about-us-section-for-description-holder">
+                                        <div class="about-us-section-for-description">{{quote('meditation', true)}}.</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="about-us-section-devider-holder">
-                        <div class="about-us-section-devider"></div>
-                    </div>
-                    <div class="about-us-section-additional-text-how-holder">
-                        <div class="about-us-section-additional-text-how">
-                            {{ quote('how', true) }}?
-                        </div>
-                    </div>
-                    <div class="about-us-section-additional-text-learn-more-holder">
-                        <div class="about-us-section-additional-text-learn-more">
-                            {{ quote('scroll down or press') }}
-                                <a class="about-us-fire-icon" href="#offer-section">🔥</a>
-                            {{ quote('to learn more') }}
+
+                                            
+                        <div class="about-us-section-text-and-devider-holder">
+                            <div class="about-us-section-additional-text-how-holder">
+                                <div class="about-us-section-additional-text-how">
+                                    {{ quote('how', true) }}?
+                                </div>
+                            </div>
+                            <div class="about-us-section-devider-holder">
+                                <div class="about-us-section-devider"></div>
+                            </div>
+                            <div class="about-us-section-additional-text-learn-more-holder">
+                                <div class="about-us-section-additional-text-learn-more">
+                                    {{ quote('scroll down or press') }}
+                                        <a class="about-us-fire-icon" href="#offer-section">🔥</a>
+                                    {{ quote('to learn more') }}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

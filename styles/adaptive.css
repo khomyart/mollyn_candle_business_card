@@ -1,0 +1,85 @@
+@media only screen and (max-width: 1000px){
+
+}
+
+@media only screen and (max-width: 768px){
+    .fullscreen-section {
+        padding: 0 8px 12px 12px;
+    }
+
+    .main-section-outter {
+        width: 100%;
+    }
+
+    .home-section {
+        font-size: 18px; 
+        margin-top: 70px; 
+        margin-bottom: 12px; 
+        min-height: calc(100vh - 70px - 12px); 
+    }
+
+    .language-switcher {
+        display: none;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .logo {
+        width: 17em;
+        top: 39%;
+    }
+
+    .candles-logo {
+        width: 25em;
+        top: 65%;
+    }
+
+    .divider {
+        top: 85%;
+    }
+
+    /* about us */
+    .about-us-section {
+        font-size: 16px; 
+    }
+
+    .about-us-section-description {
+        position: absolute;
+        top: 40%; 
+        left: 50%; 
+        width: 300px; 
+        transform: translate(-50%, -50%);
+    }
+
+    .about-us-section-description span, .about-us-section-description-for > div > div:nth-child(1) {
+        text-align: center;
+    }
+
+    .about-us-section-description-for {
+        justify-content: center;
+        margin-left: 3em;
+    }
+
+    .about-us-section-text-and-devider-holder {
+        margin-top: 0em; 
+        text-align: center; 
+    }
+
+    .about-us-section-flame {
+        --flame-size: 700px;
+    }
+}
+
+
+@media only screen and (max-width: 480px){
+    .home-section {
+        font-size: 16px; 
+    }
+}
+
+
+@media only screen and (max-width: 360px) {
+
+}
