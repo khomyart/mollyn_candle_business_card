@@ -30,8 +30,8 @@ const mainComponent = {
         products: [
             {
                 name: {
-                    en: "Fluff yFluffy Fluffy",
-                    sw: "Sw Fluff yFluffy Fluffy",
+                    en: "Apple cinnamon breeze",
+                    sw: "Äppelkanelbris",
                 },
                 img: "./assets/products/epple.jpg",
                 description: {
@@ -200,8 +200,8 @@ const mainComponent = {
         ],
         selectedProduct: {
             name: {
-                en: "Fluff yFluffy Fluffy",
-                sw: "Sw Fluff yFluffy Fluffy",
+                en: "Apple cinnamon breeze",
+                sw: "Äppelkanelbris",
             },
             img: "./assets/products/epple.jpg",
             description: {
@@ -302,6 +302,10 @@ const mainComponent = {
                 en: 'to learn more',
                 sw: 'för att lära dig mer'
             },
+            'wanna get this? Feel free to contact us': {
+                en: 'wanna get this? Feel free to contact us',
+                sw: 'vill du få det här? Kontakta oss gärna'
+            },
             'candles': {
                 en: 'candles',
                 sw: 'starinljus'
@@ -342,9 +346,9 @@ const mainComponent = {
                 en: 'our products',
                 sw: 'våra produkter'
             },
-            'select something from what we offer': {
-                en: 'select something from what we offer',
-                sw: 'välj något från det vi erbjuder'
+            'choose a mood to see detail': {
+                en: 'choose a mood to see detail',
+                sw: 'välj ett humör för att se detaljer'
             },
             // 'love': {
             //     en: 'love',
@@ -473,19 +477,23 @@ const app = createApp(mainComponent)
     template: `
     <div
         :class="{'image-enter': enter, 'image-leave': leave}" 
-        class="col-12 d-flex flex-column align-items-center selected-product-detail">
-        <div class="selected-product-detail-image-holder">
-            <img :src="product.img" alt="">
-        </div>
-        <div class="selected-product-detail-name col-12 justify-content-start">
-            {{product.name}}
-        </div>
-        <div class="selected-product-detail-description">
-            <div class="selected-product-detail-description-background">
+        class="selected-product-detail d-flex justify-content-center">
+        <div class="col-12 d-flex flex-column align-items-center 
+            align-items-md-start justify-content-md-start flex-md-row"
+        >
+            <div class="selected-product-detail-image-holder">
+                <img :src="product.img" alt="">
             </div>
-            <div class="selected-product-detail-description-text">
-                <span v-html="product.description"></span>
-            </div>
+            <div class="d-flex flex-column ms-md-4">
+                <div class="selected-product-detail-name col-12 justify-content-start">
+                    {{product.name}}
+                </div>
+                <div class="selected-product-detail-description">
+                    <div class="selected-product-detail-description-text"
+                        v-html="product.description">
+                    </div>
+                </div>
+            <div>
         </div>
     </div>
     `,

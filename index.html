@@ -253,15 +253,15 @@
                 </div>
             </div>
             <div id="products-section" class="fullscreen-section">
-                <div class="main-section-outter products-section">
+                <div class="main-section-outter products-section px-md-5 px-1 d-flex flex-column">
                     <div class="d-flex justify-content-center products-section-header">
                         {{ quote('our products', true) }}
                     </div>
                     <div class="d-flex justify-content-start products-section-subheader">
-                        {{ quote('select something from what we offer', true) }}
+                        {{ quote('choose a mood to see detail', true) }}:
                     </div>
-                    <div class="d-flex flex-column flex-md-row mb-4">
-                        <div class="col-12 col-md-6 products-section-pills-holder">
+                    <div class="d-flex flex-column mb-4">
+                        <div class="col-12 products-section-pills-holder">
                             <div class="col-12 d-flex flex-wrap">
                                 <div v-for="(product, index) in products" 
                                     class="products-section-pill-element"
@@ -274,7 +274,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-md-6">
+                        <div class="col-12">
                             <product-detail 
                                 :name="selectedProduct.name[language]"
                                 :img="selectedProduct.img"
@@ -282,7 +282,16 @@
                                 :lang="language"
                             ></product-detail>
                         </div>
-                    </div>              
+                        <hr class="mt-0 col-12">
+                        <div class="col-12 px-3 text-center">
+                            <p class="mb-3">
+                               {{ quote('wanna get this? Feel free to contact us', true) }}.
+                            </p>
+                            <p class="mb-0">
+                                {{ quote('scroll down or press', true) }} <a style="text-decoration: none; font-size: 1.2em;" href="#contacts-section">📱</a> {{ quote('to learn more') }}.
+                            </p>
+                        </div>  
+                    </div>        
                 </div>
             </div>
             <div id="contacts-section" class="fullscreen-section">
