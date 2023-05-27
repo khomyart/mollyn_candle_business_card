@@ -144,7 +144,7 @@ body {
 }
 
 .logo {
-    width: 20em; /* -> */
+    width: 25em; /* -> */
     position: absolute;
     top: 43%; /* -> */
     left: 50%;
@@ -157,7 +157,7 @@ body {
 }
 
 .candles-logo {
-    width: 25em; /* -> */
+    width: 34em; /* -> */
     position: absolute;
     top: 70%; /* -> */
     left: 50%;
@@ -223,7 +223,7 @@ body {
 .about-us-section {
     background-color: #fff7f5d8;
     overflow: hidden;
-    font-size: 18px; /* -> */
+    font-size: 27px; /* -> */
 }
 
 .about-us-background-image {
@@ -243,7 +243,7 @@ body {
     position: absolute;
     top: 85px; /* -> */
     left: 10%; /* -> */
-    width: 450px; /* -> */
+    width: 700px; /* -> */
 }
 .about-us-section-description span, .about-us-section-description-for > div > div:nth-child(1) {
     font-family: 'Bebas Neue', sans-serif;
@@ -404,13 +404,13 @@ body {
 
 .about-us-section-flame {
     position: absolute;
-    top: 100%;
+    top: 101%;
     left: 50%;
     transform: translate(-50%, -100%);
     width: 100%;
     opacity: 0;
     height: 300px;
-    --flame-size: 800px;
+    --flame-size: 1200px;
     z-index: -1;
 }
 .flame-1 {
@@ -592,7 +592,7 @@ body {
     font-size: 18px;
 }
 .products-section-header {
-    font-size: 1.1em;
+    font-size: 1.3em;
     margin-top: 1em;
     padding: 0 1em;
 }

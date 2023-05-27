@@ -37,6 +37,7 @@ if (getScreenOrientation() === 'portrait') {
 }
 
 applicationHolder.addEventListener('scroll', () => {
+    console.log('scrolled')
     if (getScreenOrientation() === 'lanscape') {
         if (window.scrollY > getOffset(aboutUsFirstSection).top - 10) {
             topMenu.classList.add("top-menu-show");
