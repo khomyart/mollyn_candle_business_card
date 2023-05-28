@@ -32,11 +32,12 @@ let applicationHolder = document.querySelector("#app");
 
 let aboutUsFirstSection = document.querySelector("#about-us-section");
 
-if (getScreenOrientation() === 'portrait') {
-    topMenuMobile.style.top = '0';
+if (getScreenOrientation() === 'portrait' && window.innerWidth <= 768) {
+    topMenuMobile.style.top = '0px';
 }
 
 document.body.onscroll = () => {
+    // if (getScreenOrientation() === 'lanscape' || window.innerWidth > 768) {
     if (getScreenOrientation() === 'lanscape') {
         if (window.scrollY > getOffset(aboutUsFirstSection).top - 10) {
             topMenu.classList.add("top-menu-show");

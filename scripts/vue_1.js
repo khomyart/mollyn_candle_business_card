@@ -28,8 +28,8 @@ const mainComponent = {
                 href: ''
             }
         },
-        // language: "sw",
-        language: "en",
+        language: "sw",
+        // language: "en",
         slideInterval: null,
         descriptionImageSrc: "./assets/description-menu/unique_design.png",
         descriptionBenefitsList: [
@@ -57,8 +57,8 @@ const mainComponent = {
         products: [
             {
                 name: {
-                    en: "Apple cinnamon breeze",
-                    sw: "Äppelkanelbris",
+                    en: "Apple jasmine breeze",
+                    sw: "Äppeljasminbris",
                 },
                 img: "./assets/products/epple.jpg",
                 description: {
@@ -71,7 +71,7 @@ const mainComponent = {
                         -A fragrance of the highest quality, made in France. <br/>
                         -200 ml. <br/>
                         -The candle burns for 40 hours. <br/>
-                        - Price SEK 180. <br/>
+                        - Price 180 SEK. <br/>
                     `,
                     sw: `
                         Vad är värme? Mysighet, doften av ett ljus och flammans flimmer 🕯 <br/>
@@ -88,147 +88,59 @@ const mainComponent = {
             },
             {
                 name: {
-                    en: "Fluff",
-                    sw: "Sw Fluff",
+                    en: "Tenderness of lavender",
+                    sw: "Ömhet av lavendel",
                 },
-                img: "./assets/description-menu/aromats.png",
+                img: "./assets/products/lavander.jpg",
                 description: {
                     en: `
-                        What is heat? Coziness, the scent of a candle and the flickering of the flame 🕯 <br/>
-                        Thanks to natural ingredients, our candles are completely safe and environmentally friendly 🕊️ <br/>
-                        We would like to present our apple and jasmine scented candles decorated with dried flowers 🌸 <br/>
-                        The delicate floral scent will fill your home with the scent of spring in just a few minutes ✨ <br/>
+                        Lavender candle - the perfect combination of natural wax and lavender scent 💜 🌿 <br/>
+                        Lavender is not only a beautiful plant with a delicate fragrance, but also a very useful and healing herb. <br/>
+                        This scented candle is suitable for all occasions and just for relaxation 🧘. <br/>
+                        -100ml.<br/>
                         -Natural soy wax from the USA. <br/>
-                        -A fragrance of the highest quality, made in France. <br/>
-                        -200 ml. <br/>
-                        -The candle burns for 40 hours. <br/>
-                        - Price SEK 180. <br/>
+                        -Lavender scent from France. <br/>
+                        -The candle burns for 20 hours. <br/>
+                        - Price 120 SEK. <br/>
                     `,
                     sw: `
-                        Swe Vad är värme? Mysighet, doften av ett ljus och flammans flimmer 🕯 <br/>
-                        Tack vare naturliga ingredienser är våra ljus helt säkra och miljövänliga 🕊️ <br/>
-                        Vi vill presentera våra doftljus med äppel- och jasmindoft som är dekorerade med torkade blommor 🌸 <br/>
-                        Den delikata blomdoften kommer att fylla ditt hem med vårens doft på bara några minuter ✨ <br/>
+                        Lavendelljus - den perfekta kombinationen av naturligt vax och lavendeldoft 💜 🌿 <br/>
+                        Lavendel är inte bara en vacker växt med en delikat doft, utan också en mycket användbar och läkande ört. <br/>
+                        Det här doftljuset passar för alla tillfällen och bara för avkoppling 🧘‍♀️. <br/>
+                        -100ml.<br/>
                         -Naturligt sojavax från USA. <br/>
-                        -En doft av högsta kvalitet, tillverkad i Frankrike. <br/>
-                        -200 ml. <br/>
-                        -Ljuset brinner i 40 timmar. <br/>
-                        -Pris 180 SEK. <br/>
+                        -Lavendeldoft från Frankrike. <br/>
+                        -Ljuset brinner i 20 timmar. <br/>
+                        -Pris 120 SEK. <br/>
                     `,
                 }
             },
             {
                 name: {
-                    en: "Fluff 2",
-                    sw: "Sw Fluff 2",
+                    en: "Vivacity of morning coffee",
+                    sw: "Morgonkaffets livlighet",
                 },
-                img: "./assets/description-menu/aromats.png",
+                img: "./assets/products/coffee.jpg",
                 description: {
                     en: `
-                        What is heat? Coziness, the scent of a candle and the flickering of the flame 🕯 <br/>
-                        Thanks to natural ingredients, our candles are completely safe and environmentally friendly 🕊️ <br/>
-                        We would like to present our apple and jasmine scented candles decorated with dried flowers 🌸 <br/>
-                        The delicate floral scent will fill your home with the scent of spring in just a few minutes ✨ <br/>
+                        These coffee candles will win everyone's heart 🫶🏼 <br/>
+                        - Price SEK 200 👍🏼 <br/>
+                        <br/>
+                        Let the aroma of coffee pamper you<br/>
                     `,
                     sw: `
-                        Swe Vad är värme? Mysighet, doften av ett ljus och flammans flimmer 🕯 <br/>
-                        Tack vare naturliga ingredienser är våra ljus helt säkra och miljövänliga 🕊️ <br/>
-                        Vi vill presentera våra doftljus med äppel- och jasmindoft som är dekorerade med torkade blommor 🌸 <br/>
-                        Den delikata blomdoften kommer att fylla ditt hem med vårens doft på bara några minuter ✨ <br/>
+                        Dessa kaffeljus kommer att vinna allas hjärta 🫶🏼 <br/>
+                        -Pris 200 SEK 👍🏼 <br/>
+                        <br/>
+                        Låt doften av kaffe skämma bort dig<br/>
                     `,
-                }
-            },
-            {
-                name: {
-                    en: "Fluff 3",
-                    sw: "Sw Fluff 3",
-                },
-                img: "./assets/description-menu/aromats.png",
-                description: {
-                    en: `
-                        What is heat? Coziness, the scent of a candle and the flickering of the flame 🕯 <br/>
-                        Thanks to natural ingredients, our candles are completely safe and environmentally friendly 🕊️ <br/>
-                        We would like to present our apple and jasmine scented candles decorated with dried flowers 🌸 <br/>
-                        The delicate floral scent will fill your home with the scent of spring in just a few minutes ✨ <br/>
-                    `,
-                    sw: `
-                        Swe Vad är värme? Mysighet, doften av ett ljus och flammans flimmer 🕯 <br/>
-                        Tack vare naturliga ingredienser är våra ljus helt säkra och miljövänliga 🕊️ <br/>
-                        Vi vill presentera våra doftljus med äppel- och jasmindoft som är dekorerade med torkade blommor 🌸 <br/>
-                        Den delikata blomdoften kommer att fylla ditt hem med vårens doft på bara några minuter ✨ <br/>
-                    `,
-                }
-            },
-            {
-                name: {
-                    en: "Fluff 4",
-                    sw: "Sw Fluff 4",
-                },
-                img: "./assets/description-menu/aromats.png",
-                description: {
-                    en: `
-                        What is heat? Coziness, the scent of a candle and the flickering of the flame 🕯 <br/>
-                        Thanks to natural ingredients, our candles are completely safe and environmentally friendly 🕊️ <br/>
-                        We would like to present our apple and jasmine scented candles decorated with dried flowers 🌸 <br/>
-                        The delicate floral scent will fill your home with the scent of spring in just a few minutes ✨ <br/>
-                    `,
-                    sw: `
-                        Swe Vad är värme? Mysighet, doften av ett ljus och flammans flimmer 🕯 <br/>
-                        Tack vare naturliga ingredienser är våra ljus helt säkra och miljövänliga 🕊️ <br/>
-                        Vi vill presentera våra doftljus med äppel- och jasmindoft som är dekorerade med torkade blommor 🌸 <br/>
-                        Den delikata blomdoften kommer att fylla ditt hem med vårens doft på bara några minuter ✨ <br/>
-                    `,
-                }
-            },
-            {
-                name: {
-                    en: "Fluff 5",
-                    sw: "Sw Fluff 5",
-                },
-                img: "./assets/description-menu/aromats.png",
-                description: {
-                    en: `123`,
-                    sw: `swe 123`,
-                }
-            },
-            {
-                name: {
-                    en: "Fluff 6",
-                    sw: "Sw Fluff 6",
-                },
-                img: "./assets/description-menu/aromats.png",
-                description: {
-                    en: `123`,
-                    sw: `swe 123`,
-                }
-            },
-            {
-                name: {
-                    en: "Fluff 7",
-                    sw: "Sw Fluff 7",
-                },
-                img: "./assets/description-menu/aromats.png",
-                description: {
-                    en: `123`,
-                    sw: `swe 123`,
-                }
-            },
-            {
-                name: {
-                    en: "Fluff Fluff 7Fluff 7Fluff 8",
-                    sw: "Sw Fluff Fluff 7Fluff 7Fluff 8",
-                },
-                img: "./assets/description-menu/aromats.png",
-                description: {
-                    en: `123`,
-                    sw: `swe 123`,
                 }
             },
         ],
         selectedProduct: {
             name: {
-                en: "Apple cinnamon breeze",
-                sw: "Äppelkanelbris",
+                en: "Apple jasmine breeze",
+                sw: "Äppeljasminbris",
             },
             img: "./assets/products/epple.jpg",
             description: {
@@ -377,6 +289,14 @@ const mainComponent = {
                 en: 'choose a mood to see detail',
                 sw: 'välj ett humör för att se detaljer'
             },
+            'how to reach us': {
+                en: 'how to reach us',
+                sw: 'hur man når oss'
+            },
+            'phone number': {
+                en: 'phone number',
+                sw: 'telefonnumer'
+            },
             // 'love': {
             //     en: 'love',
             //     sw: 'arbete'
@@ -402,8 +322,12 @@ const mainComponent = {
                     ? quote[this.language].charAt(0).toUpperCase() + quote[this.language].slice(1) 
                     : quote[this.language]
             }
-            return "none";
+            return "";
         },
+        changeLanguage(language) {
+            this.language = language;
+            localStorage.setItem('language', this.language);
+        }
     },
     watch: {
         showHiddenMenu(newValue) {
@@ -417,6 +341,12 @@ const mainComponent = {
         }
     },
     mounted() {
+        let localStoreLanguage = localStorage.getItem('language');
+
+        if (localStoreLanguage != null) {
+            this.language = localStoreLanguage;
+        }
+        
         let homeSection = document.querySelector("#home-section");
         let aboutUsSection = document.querySelector("#about-us-section");
         let offerSection = document.querySelector("#offer-section");

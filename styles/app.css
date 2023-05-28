@@ -264,7 +264,7 @@ body {
 }
 .about-us-section-description span, .about-us-section-description-for > div > div:nth-child(1) {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 465%; 
+    font-size: 465%; /* -> */
     line-height: 1.1em;
     margin-top: -0.18em;
     padding: 0;
