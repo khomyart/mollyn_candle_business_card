@@ -7,16 +7,25 @@
     box-sizing: border-box;
 }
 
+[v-cloak] {
+    display: none;
+}
+
 body {
     width: 100vw;
     height: 100vh;
-}
-
-.application-holder{
-    width: 100%;
-    height: 100%;
     overflow: auto;
     overflow-x: hidden;
+}
+
+.preload-image {
+    display: none;
+}
+
+.application-holder {
+    width: 100%;
+    height: fit-content;
+    overflow: hidden;
     scroll-behavior: smooth;
 }
 
@@ -96,6 +105,8 @@ body {
     top: calc(50% - 10em/2);
     left: 10%; /* -> */
     opacity: 0;
+}
+.menu-animation {
     animation: forwards 1s menu_appearing 2.5s;
 }
 
@@ -178,6 +189,8 @@ body {
     transform: translate(-50%, 0);
     top: 89%; /* -> */
     left: 50%;
+}
+.divider-animation {
     animation: forwards 1500ms wider;
     animation-delay: 0.5s;
     overflow: hidden;
@@ -198,6 +211,10 @@ body {
     user-select: none;
     width: 13em;
     text-align: center;
+    display: none;
+}
+.description-animation {
+    display: block;
     animation: forwards 1.3s downer;
     animation-delay: 1.3s;
 }
@@ -280,6 +297,7 @@ body {
 }
 .for {
     display: inline-block;
+    position: relative;
 } 
 
 .about-us-section-descriptions-and-for {
@@ -322,7 +340,9 @@ body {
     width: 0%;
     height: 0.15em;
     overflow: hidden;
-    animation: forwards 1.5s devider-appearing-from-left-to-right 3s ease-in-out;
+}
+.about-us-section-devider-holder-animation {
+    animation: forwards 1.2s devider-appearing-from-left-to-right 3s ease-in-out;
 }
 .about-us-section-devider {
     width: 100%;
@@ -352,6 +372,8 @@ body {
     font-size: 1.1em;
     position: relative;
     top: 100%;
+}
+.about-us-section-additional-text-how-animation {
     animation: forwards 1.5s text-appearing-from-bot-to-top 3.6s;
 }
 @keyframes text-appearing-from-bot-to-top {
@@ -384,6 +406,8 @@ body {
     top: -180%;
     font-size: 0.9em;
     position: relative;
+}
+.about-us-section-additional-text-learn-more-animation {
     animation: forwards 1.5s text-appearing-from-top-to-bot 4.4s;
 }
 
@@ -464,6 +488,10 @@ body {
     height: fit-content;
     font-size: 0.8em;
     width: fit-content;
+    opacity: 0;
+}
+.description-section-header-animation {
+    animation: forwards 0.8s transform-px-from-top-to-bot ease-out 0.5s;
 }
 
 .description-section-header p {
@@ -524,11 +552,16 @@ body {
     justify-content: space-between;
     height: fit-content;
 }
+
 .description-image-holder {
     width: 400px; 
     overflow: hidden;
     border-radius: 10px;
+    opacity: 0;
  }
+.description-image-holder-animation {
+    animation: forwards 0.8s transform-px-from-top-to-bot ease-out 1.5s;
+}
 .description-image-holder img {
     width: 100%;
 }
@@ -561,6 +594,10 @@ body {
 
 .description-menu {
     margin-top: -20px;
+    opacity: 0;
+}
+.description-menu-animation {
+    animation: forwards 0.8s transform-px-from-top-to-bot ease-out 1s;
 }
 
 .description-menu ul {
@@ -603,6 +640,10 @@ body {
 }
 .products-section-pills-holder {
     padding: 0.75em 0.75em 0;
+    opacity: 0;
+}
+.products-section-pills-holder-animation {
+    animation: forwards 0.8s transform-px-from-top-to-bot ease-out 0.5s;
 }
 .products-section-pills-holder > div {
     margin-left: calc(var(--pills-margin) * -1);
@@ -627,7 +668,21 @@ body {
     background-color: rgb(171, 14, 124);
     color: white;
 }
-
+.product-detail-holder {
+    opacity: 0;
+}
+.product-detail-holder-animation {
+    animation: forwards 0.8s transform-px-from-top-to-bot ease-out 1.2s;
+}
+@keyframes transform-px-from-top-to-bot {
+    from {
+        transform: translate(0, -15px);
+    }
+    to {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
 .selected-product-detail {
     padding: 15px;
 }
@@ -659,6 +714,12 @@ body {
 .selected-product-detail-description-text {
     height: 100%;
     overflow: auto;
+}
+.product-detail-contact-info {
+    opacity: 0;
+}
+.product-detail-contact-info-animation {
+    animation: forwards 0.8s transform-px-from-top-to-bot ease-out 0.5s;
 }
 
 /* scroll */

@@ -36,8 +36,7 @@ if (getScreenOrientation() === 'portrait') {
     topMenuMobile.style.top = '0';
 }
 
-applicationHolder.addEventListener('scroll', () => {
-    console.log('scrolled')
+document.body.onscroll = () => {
     if (getScreenOrientation() === 'lanscape') {
         if (window.scrollY > getOffset(aboutUsFirstSection).top - 10) {
             topMenu.classList.add("top-menu-show");
@@ -49,7 +48,7 @@ applicationHolder.addEventListener('scroll', () => {
             }
         }
     }
-}) 
+}
 
 /**
  * Flame
@@ -65,17 +64,4 @@ for (let i = 1; i <= amountOfFlames; i++) {
     setTimeout(()=>{
         flame.classList.add("flame-animation");
     }, 2000 * i - 1)
-}
-
-let atmospheres = document.querySelectorAll(".about-us-section-for-description");
-let appearingDelay = 700; //ms
-
-for (let i = 0; i < 3; i++) {
-    setTimeout(()=>{
-        atmospheres[i*2].classList.add('drop-down-text-animation');
-
-        if (atmospheres[i*2+1] != undefined) {
-            atmospheres[i*2+1].classList.add('drop-down-text-animation');
-        }
-    }, (i + 1) * appearingDelay)
 }

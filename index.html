@@ -17,31 +17,39 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
 </head>
-<body>
-    <div id="app" class="application-holder" :class="{'disable-scroll': showHiddenMenu === true}">
-        <div v-if="showHiddenMenu === true" class="top-menu-hidden-window">
-            <span class="material-symbols-outlined top-menu-hidden-window-close-button"
-                @click="showHiddenMenu = false">
-                close
-            </span>
-            <ul class="top-menu-hrefs-mobile">
-                <li @click="showHiddenMenu = false">
-                    <a href="#home-section">{{ quote('home', true) }}</a>
-                </li>
-                <li @click="showHiddenMenu = false">
-                    <a href="#about-us-section">{{ quote('about us', true) }}</a>
-                </li>
-                <li @click="showHiddenMenu = false">
-                    <a href="#offer-section">{{ quote('what we offer', true) }}</a>
-                </li>
-                <li @click="showHiddenMenu = false">
-                    <a href="#products-section">{{ quote('products', true) }}</a>
-                </li>
-                <li @click="showHiddenMenu = false">
-                    <a href="#contacts-section">{{ quote('contacts', true) }}</a>
-                </li>
-            </ul>
-        </div>
+<body root>
+    <div id="app" class="application-holder" v-cloak>
+        <Transition name="menu-window-appear">
+            <div v-if="showHiddenMenu === true" class="top-menu-hidden-window">
+                <span class="material-symbols-outlined top-menu-hidden-window-close-button"
+                    @click="showHiddenMenu = false">
+                    close
+                </span>
+                
+                <ul class="top-menu-hrefs-mobile">
+                    <li>
+                        <div class="top-menu-hidden-window-logo">
+                            <img src="./assets/MollynCandleLableRed.png" alt="">
+                        </div>
+                    </li>
+                    <li @click="showHiddenMenu = false">
+                        <a href="#home-section">{{ quote('home', true) }}</a>
+                    </li>
+                    <li @click="showHiddenMenu = false">
+                        <a href="#about-us-section">{{ quote('about us', true) }}</a>
+                    </li>
+                    <li @click="showHiddenMenu = false">
+                        <a href="#offer-section">{{ quote('what we offer', true) }}</a>
+                    </li>
+                    <li @click="showHiddenMenu = false">
+                        <a href="#products-section">{{ quote('products', true) }}</a>
+                    </li>
+                    <li @click="showHiddenMenu = false">
+                        <a href="#contacts-section">{{ quote('contacts', true) }}</a>
+                    </li>
+                </ul>
+            </div>
+        </Transition>
         <div class="content-container">
             <div class="background-image"></div>
             <div class="background-color"></div>
@@ -51,12 +59,19 @@
                         <img src="./assets/MollynCandleLableRed.png" alt="">
                     </a>
                 </div>
-                
                 <ul class="top-menu-hrefs">
-                    <li><a href="#about-us-section">{{ quote('about us', true) }}</a></li>
-                    <li><a href="#offer-section">{{ quote('what we offer', true) }}</a></li>
-                    <li><a href="#products-section">{{ quote('products', true) }}</a></li>
-                    <li><a href="#contacts-section">{{ quote('contacts', true) }}</a></li>
+                    <li :class="{'top-menu-active-href': currentSection === 'about-us-section'}">
+                        <a href="#about-us-section">{{ quote('about us', true) }}</a>
+                    </li>
+                    <li :class="{'top-menu-active-href': currentSection === 'offer-section'}">
+                        <a href="#offer-section">{{ quote('what we offer', true) }}</a>
+                    </li>
+                    <li :class="{'top-menu-active-href': currentSection === 'products-section'}">
+                        <a href="#products-section">{{ quote('products', true) }}</a>
+                    </li>
+                    <li :class="{'top-menu-active-href': currentSection === 'contacts-section'}">
+                        <a href="#contacts-section">{{ quote('contacts', true) }}</a>
+                    </li>
                     <li>
                         <div class="top-menu-language-switcher">
                             <span 
@@ -72,27 +87,33 @@
                     </li>
                 </ul>
             </nav>
-            <nav class="top-menu-mobile" v-show="showHiddenMenu === false">
-                <div class="col-3 d-flex justify-content-start"> 
-                    <div class="top-menu-logo" @click="showHiddenMenu = true">
-                        <img src="./assets/MollynCandleLableRed.png" alt="">
+            <Transition name="menu-appear">
+                <nav class="top-menu-mobile" v-show="showHiddenMenu === false">
+                    <div class="col-3 d-flex justify-content-start"> 
+                        <span class="material-symbols-outlined top-menu-hidden-window-appear-button" @click="showHiddenMenu = true">
+                            menu
+                        </span>
                     </div>
-                </div>
-                <div class="col-6 d-flex justify-content-center"></div>
-                <div class="col-3 d-flex justify-content-end">
-                    <div class="top-menu-language-switcher">
-                        <span 
-                            :class="{'language-switcher-active': language === 'en'}"
-                            @click="language = 'en'"
-                        >EN</span>
-                        |
-                        <span 
-                            :class="{'language-switcher-active': language === 'sw'}"
-                            @click="language = 'sw'"
-                        >SW</span>
+                    <div class="col-6 d-flex justify-content-center current-section-label">
+                        <a :href="currentSectionDescription[currentSection].href">
+                            {{quote(currentSectionDescription[currentSection].quoteName, true)}}
+                        </a>
                     </div>
-                </div>
-            </nav>
+                    <div class="col-3 d-flex justify-content-end">
+                        <div class="top-menu-language-switcher">
+                            <span 
+                                :class="{'language-switcher-active': language === 'en'}"
+                                @click="language = 'en'"
+                            >EN</span>
+                            |
+                            <span 
+                                :class="{'language-switcher-active': language === 'sw'}"
+                                @click="language = 'sw'"
+                            >SW</span>
+                        </div>
+                    </div>
+                </nav>
+            </Transition>
             <div id="home-section" class="fullscreen-section d-flex justify-content-center align-items-center">
                 <div class="main-section-outter home-section">
                     <div class="language-switcher">
@@ -274,7 +295,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12">
+                        <div class="col-12 product-detail-holder">
                             <product-detail 
                                 :name="selectedProduct.name[language]"
                                 :img="selectedProduct.img"
@@ -283,7 +304,7 @@
                             ></product-detail>
                         </div>
                         <hr class="mt-0 col-12">
-                        <div class="col-12 px-3 text-center">
+                        <div id="product-detail-contact-info" class="col-12 px-3 text-center product-detail-contact-info">
                             <p class="mb-3">
                                {{ quote('wanna get this? Feel free to contact us', true) }}.
                             </p>
@@ -296,11 +317,16 @@
             </div>
             <div id="contacts-section" class="fullscreen-section">
                 <div class="main-section-outter">
-    
+                    
                 </div>
             </div>
         </div>
     </div>
+    <img class="preload-image" src="./assets/description-menu/unique_design.png" />
+    <img class="preload-image" src="./assets/description-menu/different_forms.png" />
+    <img class="preload-image" src="./assets/description-menu/eco.png" />
+    <img class="preload-image" src="./assets/description-menu/aromats.png" />
+    <img class="preload-image" src="./assets/description-menu/burn.png" />
 </body>
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>

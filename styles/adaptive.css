@@ -55,7 +55,7 @@
 
 @media only screen and (max-width: 768px){
     .fullscreen-section {
-        padding: 0 8px 12px 12px;
+        padding: 0 12px 12px 12px;
     }
 
     .main-section-outter {
@@ -132,6 +132,12 @@
         min-width: 100%;
         flex-direction: column;
         margin-left: 0;
+    }
+    .description-image-holder-animation {
+        animation: forwards 0.5s transform-px-from-top-to-bot ease-out 1s;
+    }
+    .description-menu-animation {
+        animation: forwards 0.5s transform-px-from-top-to-bot ease-out 1.5s;
     }
     .description-section-header {
         font-size: 0.68em;

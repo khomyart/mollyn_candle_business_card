@@ -1,8 +1,35 @@
 const mainComponent = {
     data: () => ({
         showHiddenMenu: false,
-        language: "sw",
-        // language: "en",
+        currentSection: '',
+        currentSectionDescription: {
+            'home-section' : {
+                quoteName: 'home',
+                href: '#home-section'
+            },
+            'about-us-section' : {
+                quoteName: 'about us',
+                href: '#about-us-section'
+            },
+            'offer-section' : {
+                quoteName: 'what we offer',
+                href: '#offer-section'
+            },
+            'products-section' : {
+                quoteName: 'products',
+                href: '#products-section'
+            },
+            'contacts-section' : {
+                quoteName: 'contacts',
+                href: '#contacts-section'
+            },
+            '': {
+                quoteName: '',
+                href: ''
+            }
+        },
+        // language: "sw",
+        language: "en",
         slideInterval: null,
         descriptionImageSrc: "./assets/description-menu/unique_design.png",
         descriptionBenefitsList: [
@@ -378,47 +405,177 @@ const mainComponent = {
             return "none";
         },
     },
-    mounted() {
-        //switching slides of benefits
-        let amountOfBenefitsItems = this.descriptionBenefitsList.length;
-        let index = 1;
-        this.slideInterval = setInterval(()=>{
-            this.descriptionImageSrc = this.descriptionBenefitsList[index].imgSrc;
-            index = index + 1 === amountOfBenefitsItems ? 0 : index + 1;
-        }, 5000)
+    watch: {
+        showHiddenMenu(newValue) {
+            if (newValue == true) {
+                document.body.classList.add('disable-scroll');
+            }
 
+            if (newValue == false) {
+                document.body.classList.remove('disable-scroll');
+            }
+        }
+    },
+    mounted() {
         let homeSection = document.querySelector("#home-section");
         let aboutUsSection = document.querySelector("#about-us-section");
         let offerSection = document.querySelector("#offer-section");
         let productsSection = document.querySelector("#products-section");
         let contactsSection = document.querySelector("#contacts-section");
         
+        let productDetailContactInfo = document.querySelector("#product-detail-contact-info");
+        
+        let animationListForElements = {
+            'home-section': [
+                {
+                    elementSelector: '.menu',
+                    animationCLass: 'menu-animation'
+                },
+                {
+                    elementSelector: '.divider',
+                    animationCLass: 'divider-animation'
+                },
+                {
+                    elementSelector: '.description',
+                    animationCLass: 'description-animation'
+                },
+            ],
+            'about-us-section': [
+                {
+                    elementSelector: '.about-us-section-devider-holder',
+                    animationCLass: 'about-us-section-devider-holder-animation'
+                },
+                {
+                    elementSelector: '.about-us-section-additional-text-how',
+                    animationCLass: 'about-us-section-additional-text-how-animation'
+                },
+                {
+                    elementSelector: '.about-us-section-additional-text-learn-more',
+                    animationCLass: 'about-us-section-additional-text-learn-more-animation'
+                }
+            ],
+            'offer-section': [
+                {
+                    elementSelector: '.description-section-header',
+                    animationCLass: 'description-section-header-animation'
+                },
+                {
+                    elementSelector: '.description-menu',
+                    animationCLass: 'description-menu-animation'
+                },
+                {
+                    elementSelector: '.description-image-holder',
+                    animationCLass: 'description-image-holder-animation'
+                },
+            ],
+            'products-section': [
+                {
+                    elementSelector: '.products-section-pills-holder',
+                    animationCLass: 'products-section-pills-holder-animation'
+                },
+                {
+                    elementSelector: '.product-detail-holder',
+                    animationCLass: 'product-detail-holder-animation'
+                },
+            ],
+            'product-detail-contact-info': [
+                {
+                    elementSelector: '.product-detail-contact-info',
+                    animationCLass: 'product-detail-contact-info-animation'
+                },
+            ]
+        }
+        let isAnimationTriggeredFor = {
+            'home-section': false,
+            'about-us-section': false,
+            'offer-section': false,
+            'products-section': false,
+            'product-detail-contact-info': false,
+            'contacts-section': false,
+        }
+
         /**
          * Scroll observer
          */
-        createObserver();
+        let observer;
         
-        function createObserver() {
-            let observer;
-          
-            let options = {
-              root: null,
-              rootMargin: "0px",
-              threshold: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
-            };
-          
-            observer = new IntersectionObserver(handleIntersect, options);
-            observer.observe(homeSection);
-            observer.observe(aboutUsSection);
-          }
-        
-        function handleIntersect(entries, observer) {
-            entries.forEach(entry => {
-                console.log(entry.target.id)
-                console.log(entry.intersectionRatio)
-                console.log(entry.isIntersecting)
-            });
+        let options = {
+            root: null,
+            rootMargin: "0px",
+            threshold: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+        };
+        let viewPortHeight = window.innerHeight - 5; //why -5? donnu, just fit here
+        function getItemHeight(itemSelector) {
+            let element = document.querySelector(itemSelector);
+            return element.offsetHeight;
         }
+        
+        observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                //defining current window logic  
+                if (entry.target.id != 'product-detail-contact-info') {
+                    let howMuchViewportFilledWithTargetObject = 
+                        (entry.intersectionRatio * getItemHeight(`#${entry.target.id}`)) / viewPortHeight
+                    if (entry.intersectionRatio > 0.7 || howMuchViewportFilledWithTargetObject > 0.7) {
+                        this.currentSection = entry.target.id;
+                        console.log(this.currentSection)
+                    }
+                }
+
+                //animation on appearing logic
+                if (entry.intersectionRatio > 0.3 && entry.isIntersecting) {
+                    if (entry.target.id in animationListForElements) {
+                        //special "script" condition for about-us-section
+                        if (entry.target.id === 'about-us-section' 
+                            && !isAnimationTriggeredFor['about-us-section']) {
+                            let atmospheres = document.querySelectorAll(".about-us-section-for-description");
+                            let appearingDelay = 700; //ms
+                            let delayBeforeStart = 0; //ms
+                            setTimeout(()=>{
+                                for (let i = 0; i < 3; i++) {
+                                    setTimeout(()=>{
+                                        atmospheres[i*2].classList.add('drop-down-text-animation');
+                                
+                                        if (atmospheres[i*2+1] != undefined) {
+                                            atmospheres[i*2+1].classList.add('drop-down-text-animation');
+                                        }
+                                    }, (i + 1) * appearingDelay)
+                                }
+                            }, delayBeforeStart)
+                        }
+                            
+                        if (!isAnimationTriggeredFor[entry.target.id]) {
+                            if (entry.target.id == 'offer-section') {
+                                //switching slides of benefits
+                                let amountOfBenefitsItems = this.descriptionBenefitsList.length;
+                                let slideIndex = 1;
+                                this.slideInterval = setInterval(()=>{
+                                    this.descriptionImageSrc = this.descriptionBenefitsList[slideIndex].imgSrc;
+                                    slideIndex = slideIndex + 1 === amountOfBenefitsItems ? 0 : slideIndex + 1;
+                                }, 5000)
+                            }
+                            animationListForElements[entry.target.id].forEach((el)=>{
+                                let currentElements = 
+                                document.querySelectorAll(el.elementSelector);
+                                currentElements.forEach((selectedEl)=>{
+                                    selectedEl.classList.add(el.animationCLass);
+                                })
+                            })
+
+                            isAnimationTriggeredFor[entry.target.id] = true;
+                        }
+                    }
+                }
+            });
+        }, options);
+        observer.observe(homeSection);
+        observer.observe(aboutUsSection);
+        observer.observe(offerSection);
+        observer.observe(productsSection);
+        observer.observe(contactsSection);
+        
+        //additional observers
+        observer.observe(productDetailContactInfo);
     }
 };
 
@@ -475,8 +632,7 @@ const app = createApp(mainComponent)
 
 .component('product-detail', {
     template: `
-    <div
-        :class="{'image-enter': enter, 'image-leave': leave}" 
+    <div id="product-section-detail" :class="{'image-enter': enter, 'image-leave': leave}" 
         class="selected-product-detail d-flex justify-content-center">
         <div class="col-12 d-flex flex-column align-items-center 
             align-items-md-start justify-content-md-start flex-md-row"
@@ -493,7 +649,7 @@ const app = createApp(mainComponent)
                         v-html="product.description">
                     </div>
                 </div>
-            <div>
+            </div>
         </div>
     </div>
     `,
@@ -540,6 +696,19 @@ const app = createApp(mainComponent)
         this.product.name = this.name;
         this.product.img = this.img;
         this.product.description = this.description;
+        // let options = {
+        //     root: null,
+        //     rootMargin: "0px",
+        //     threshold: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]
+        // };
+        // let observer = new IntersectionObserver((entries)=>{
+        //     entries.forEach((entry)=>{
+        //         console.log(entry.target.id)
+        //         console.log(entry.intersectionRatio)
+        //     })
+        // }, options)
+
+        // observer.observe(this.$el)
     }
 })
 
