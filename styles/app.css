@@ -722,6 +722,44 @@ body {
     animation: forwards 0.8s transform-px-from-top-to-bot ease-out 0.5s;
 }
 
+.contacts-section {
+    font-size: 18px; /* -> */
+    height: fit-content !important;
+    min-height: 500px !important;
+}
+
+.contacts-section-header {
+    font-size: 1.3em;
+}
+
+.contacts-section-subheder {
+    font-size: 1.1em;
+    display: flex;
+
+}
+
+.contacts-section-subheder-image-holder {
+    width: 1.1em;
+    margin-right: 4px;
+    display: flex;
+    align-items: center;
+}
+
+.contacts-section-subheder-image-holder img {
+    width: 100%;
+    height: auto;
+}
+
+.contacts-section-detail a {
+    color: rgb(228, 30, 103)
+}
+
+.contacts-section-image-holder {
+}
+
+.contacts-section-image-holder img {
+    width: 400px; /* -> */
+}
 /* scroll */
 ::-webkit-scrollbar {
     width: 8px;

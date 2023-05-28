@@ -178,6 +178,11 @@
     .selected-product-detail-description {
         margin-top: 1.58em;
     }
+
+    /* Contacts */
+    .contacts-section {
+        font-size: 16px;
+    }
 }
 
 
