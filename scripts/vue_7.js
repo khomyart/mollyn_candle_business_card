@@ -57,37 +57,6 @@ const mainComponent = {
         products: [
             {
                 name: {
-                    en: "Apple jasmine breeze",
-                    sw: "Äppeljasminbris",
-                },
-                img: "./assets/products/epple.jpg",
-                description: {
-                    en: `
-                        What is heat? Coziness, the scent of a candle and the flickering of the flame 🕯 <br/>
-                        Thanks to natural ingredients, our candles are completely safe and environmentally friendly 🕊️ <br/>
-                        We would like to present our apple and jasmine scented candles decorated with dried flowers 🌸 <br/>
-                        The delicate floral scent will fill your home with the scent of spring in just a few minutes ✨ <br/>
-                        -Natural soy wax from the USA. <br/>
-                        -A fragrance of the highest quality, made in France. <br/>
-                        -200 ml. <br/>
-                        -The candle burns for 40 hours. <br/>
-                        - Price 180 SEK. <br/>
-                    `,
-                    sw: `
-                        Vad är värme? Mysighet, doften av ett ljus och flammans flimmer 🕯 <br/>
-                        Tack vare naturliga ingredienser är våra ljus helt säkra och miljövänliga 🕊️ <br/>
-                        Vi vill presentera våra doftljus med äppel- och jasmindoft som är dekorerade med torkade blommor 🌸 <br/>
-                        Den delikata blomdoften kommer att fylla ditt hem med vårens doft på bara några minuter ✨ <br/>
-                        -Naturligt sojavax från USA. <br/>
-                        -En doft av högsta kvalitet, tillverkad i Frankrike. <br/>
-                        -200 ml. <br/>
-                        -Ljuset brinner i 40 timmar. <br/>
-                        -Pris 180 SEK. <br/>
-                    `,
-                }
-            },
-            {
-                name: {
                     en: "Tenderness of lavender",
                     sw: "Ömhet av lavendel",
                 },
@@ -111,7 +80,7 @@ const mainComponent = {
                         -Naturligt sojavax från USA. <br/>
                         -Lavendeldoft från Frankrike. <br/>
                         -Ljuset brinner i 20 timmar. <br/>
-                        -Pris 120 SEK. <br/>
+                        -Pris 150 SEK. <br/>
                     `,
                 }
             },
@@ -123,48 +92,110 @@ const mainComponent = {
                 img: "./assets/products/coffee.jpg",
                 description: {
                     en: `
-                        These coffee candles will win everyone's heart 🫶🏼 <br/>
-                        - Price SEK 200 👍🏼 <br/>
-                        <br/>
-                        Let the aroma of coffee pamper you<br/>
+                        A cup of aromatic coffee? ☕️ <br/>
+                        Our candle is perfect in every way 💣 from fragrance to execution, a crackling wick for atmospheric relaxation, the scent of good coffee with caramel that can cheer you up in the morning and relax you in the evening. <br/>
+                        This light is suitable for any time of day and its versatile design suits both men and women. <br/>
+                        Light our coffee candle and in just 20 minutes your room will be filled with a beautiful aroma. <br/>
+                        It is a unique gift for you or your loved ones. <br/>
+                    
+                        -200 ml. <br/>
+                        -Natural soy beeswax from the USA <br/>
+                        -Premium aroma of coffee-vanilla-caramel produced in France. <br/>
+                        -The candle burns for 45 hours. <br/>
+                        - The price is 200 SEK. <br/>
                     `,
                     sw: `
-                        Dessa kaffeljus kommer att vinna allas hjärta 🫶🏼 <br/>
-                        -Pris 200 SEK 👍🏼 <br/>
-                        <br/>
-                        Låt doften av kaffe skämma bort dig<br/>
+                        En kopp aromatiskt kaffe? ☕️ <br/>
+                        Vårt ljus är perfekt på alla sätt 💣 från doft till utförande, en sprakande veke för atmosfärisk avkoppling, doften av gott kaffe med karamell som kan muntra upp dig på morgonen och slappna av på kvällen. <br/>
+                        Det här ljuset passar för alla tider på dygnet och dess mångsidiga design passar både män och kvinnor. <br/>
+                        Tänd vårt kaffeljus och på bara 20 minuter kommer ditt rum att fyllas av en vacker doft. <br/>
+                        Det är en unik present till dig eller dina nära och kära. <br/>
+                        
+                        -200 ml. <br/>
+                        -Naturligt soja bivax från USA <br/>
+                        -Premium doft av kaffe-vanilj-karamell som produceras i Frankrike. <br/>
+                        -Ljuset brinner i 45 timmar. <br/>
+                        -Priset är 200 SEK. <br/>
+                    `,
+                }
+            },
+            {
+                name: {
+                    en: "Enchanting beauty",
+                    sw: "Förtrollande skönhet",
+                },
+                img: "./assets/products/woman.jpg",
+                description: {
+                    en: `
+                        Fragrant handmade palm wax candle in the shape of a woman's body. This wax is 100% natural, biodegradable and water soluble! And the frosty pattern on the candle will enchant you! Our candle is an excellent choice as a gift and decoration for your home. Colors: blue, light blue, pink, purple. The candle is delivered in a beautiful and safe gift box. The burning time of a candle is 3 hours.<br/>
+                        -The price is 80 SEK. <br/>
+                    `,
+                    sw: `
+                        Doftande handgjort palmvaxljus i form av en kvinnokropp. Detta vax är 100 % naturligt, biologiskt nedbrytbart och vattenlösligt! Och det frostiga mönstret på ljuset kommer att förtrolla dig! Vårt ljus är ett utmärkt val som gåva och dekoration för ditt hem. Färger: blått, ljusblått, rosa, lila. Ljuset levereras i en vacker och säker presentförpackning. Brinntiden för ett ljus är 3 timmar.<br/>
+                        -Priset är 80 SEK. <br/>
+                    `,
+                }
+            },
+            {
+                name: {
+                    en: "Serenity of the sea",
+                    sw: "Havets lugn",
+                },
+                img: "./assets/products/rakushkas.jpg",
+                description: {
+                    en: `
+                        These oyster candles are made for a date with your soul 🌟. <br/>
+                        They make an attractive table decoration, a thoughtful gift or an original decoration for your home. <br/>
+                        -Natural soy wax from the USA.<br/>
+                        -A fragrance of the highest quality, produced in France.<br/>
+                        -Natural oyster shells (which have undergone all the heat treatment before they end up in the wax).<br/>
+                        -Our packaging will not leave anyone untouched.<br/>
+                        -Set of two oysters 100 SEK<br/>
+                    
+                        The sea highlights the beauty that we preserve in our soy-based candles ... <br/>
+                        Dive into the scent of the sea 🤍<br/>
+                    `,
+                    sw: `
+                        Dessa ostronljus är gjorda för en dejt med din själ 🌟. <br/>
+                        De blir en attraktiv bordsdekoration, en omtänksam gåva eller en originell dekoration för ditt hem. <br/>
+                        -Naturligt sojavax från USA.<br/>
+                        -En doft av högsta kvalitet, producerad i Frankrike.<br/>
+                        -Naturliga ostronskal (som har genomgått all värmebehandling innan de hamnar i vaxet).<br/>
+                        -Vår förpackning kommer inte att lämna någon oberörd.<br/>
+                        -Set med två ostron 100 SEK<br/>
+
+                        Havet framhäver den skönhet som vi bevarar i våra sojabaserade ljus ... <br/>
+                        Dyk ned i havets doft 🤍<br/>
                     `,
                 }
             },
         ],
         selectedProduct: {
             name: {
-                en: "Apple jasmine breeze",
-                sw: "Äppeljasminbris",
+                en: "Tenderness of lavender",
+                sw: "Ömhet av lavendel",
             },
-            img: "./assets/products/epple.jpg",
+            img: "./assets/products/lavander.jpg",
             description: {
                 en: `
-                    What is heat? Coziness, the scent of a candle and the flickering of the flame 🕯 <br/>
-                    Thanks to natural ingredients, our candles are completely safe and environmentally friendly 🕊️ <br/>
-                    We would like to present our apple and jasmine scented candles decorated with dried flowers 🌸 <br/>
-                    The delicate floral scent will fill your home with the scent of spring in just a few minutes ✨ <br/>
+                    Lavender candle - the perfect combination of natural wax and lavender scent 💜 🌿 <br/>
+                    Lavender is not only a beautiful plant with a delicate fragrance, but also a very useful and healing herb. <br/>
+                    This scented candle is suitable for all occasions and just for relaxation 🧘. <br/>
+                    -100ml.<br/>
                     -Natural soy wax from the USA. <br/>
-                    -A fragrance of the highest quality, made in France. <br/>
-                    -200 ml. <br/>
-                    -The candle burns for 40 hours. <br/>
-                    - Price SEK 180. <br/>
-                    `,
+                    -Lavender scent from France. <br/>
+                    -The candle burns for 20 hours. <br/>
+                    - Price 120 SEK. <br/>
+                `,
                 sw: `
-                    Vad är värme? Mysighet, doften av ett ljus och flammans flimmer 🕯 <br/>
-                    Tack vare naturliga ingredienser är våra ljus helt säkra och miljövänliga 🕊️ <br/>
-                    Vi vill presentera våra doftljus med äppel- och jasmindoft som är dekorerade med torkade blommor 🌸 <br/>
-                    Den delikata blomdoften kommer att fylla ditt hem med vårens doft på bara några minuter ✨ <br/>
+                    Lavendelljus - den perfekta kombinationen av naturligt vax och lavendeldoft 💜 🌿 <br/>
+                    Lavendel är inte bara en vacker växt med en delikat doft, utan också en mycket användbar och läkande ört. <br/>
+                    Det här doftljuset passar för alla tillfällen och bara för avkoppling 🧘‍♀️. <br/>
+                    -100ml.<br/>
                     -Naturligt sojavax från USA. <br/>
-                    -En doft av högsta kvalitet, tillverkad i Frankrike. <br/>
-                    -200 ml. <br/>
-                    -Ljuset brinner i 40 timmar. <br/>
-                    -Pris 180 SEK. <br/>
+                    -Lavendeldoft från Frankrike. <br/>
+                    -Ljuset brinner i 20 timmar. <br/>
+                    -Pris 150 SEK. <br/>
                 `,
             }
         },

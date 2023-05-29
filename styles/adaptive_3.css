@@ -136,7 +136,7 @@
     .description-menu-and-image-wrapper {
         min-width: 100%;
         flex-direction: column;
-        margin-left: 0;
+        margin-left: 0px;
     }
     .description-image-holder-animation {
         animation: forwards 0.5s transform-px-from-top-to-bot ease-out 1s;
@@ -208,7 +208,7 @@
         font-size: 20px;
     }
     .top-menu-mobile {
-        top: 0;
+        top: 0px;
     }
 
     .fullscreen-section {
@@ -305,7 +305,7 @@
     .description-menu-and-image-wrapper {
         min-width: 100%;
         flex-direction: column;
-        margin-left: 0;
+        margin-left: 0px;
     }
     .description-image-holder-animation {
         animation: forwards 0.5s transform-px-from-top-to-bot ease-out 1s;
@@ -375,4 +375,11 @@
 }
 
 @media screen and (min-height: 1000px) and (max-width: 1400px) and (orientation: landscape) {
+}
+
+@media screen and (max-height: 768px) and (orientation: portrait) {
+    .top-menu-mobile {
+        top: 0px;
+    }
+    
 }
