@@ -180,6 +180,19 @@
         display: none;
     }
 
+    .selected-product-detail-image-holder {
+        min-width: 230px;
+        min-height: 230px;
+        max-width: 300px;
+        max-height: 300px;
+        overflow: hidden;
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0.75em;
+    }
+
     .selected-product-detail-description {
         margin-top: 1.58em;
     }

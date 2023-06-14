@@ -31,27 +31,27 @@ const mainComponent = {
         language: "sw",
         // language: "en",
         slideInterval: null,
-        descriptionImageSrc: "./assets/description-menu/unique_design.png",
+        descriptionImageSrc: "./assets/description-menu/converted/unique_design.png",
         descriptionBenefitsList: [
             {
                 name: "unique design",
-                imgSrc: "./assets/description-menu/unique_design.png",
+                imgSrc: "./assets/description-menu/converted/unique_design.png",
             },
             {
                 name: "different shapes",
-                imgSrc: "./assets/description-menu/different_forms.png",
+                imgSrc: "./assets/description-menu/converted/different_forms.png",
             },
             {
                 name: "ecologically clean and safe raw materials",
-                imgSrc: "./assets/description-menu/eco.png",
+                imgSrc: "./assets/description-menu/converted/eco.png",
             },
             {
                 name: "fragrances of the highest quality",
-                imgSrc: "./assets/description-menu/aromats.png",
+                imgSrc: "./assets/description-menu/converted/aromats.png",
             },
             {
                 name: "long burning time",
-                imgSrc: "./assets/description-menu/burn.png",
+                imgSrc: "./assets/description-menu/converted/burn.png",
             },
         ],
         products: [
@@ -166,6 +166,33 @@ const mainComponent = {
 
                         Havet framhäver den skönhet som vi bevarar i våra sojabaserade ljus ... <br/>
                         Dyk ned i havets doft 🤍<br/>
+                    `,
+                }
+            },
+            {
+                name: {
+                    en: "Mosquito-Free Bliss",
+                    sw: "Myggfri Bliss",
+                },
+                img: "./assets/products/anti-mosquito.jpg",
+                description: {
+                    en: `
+                        News❗️ <br/>
+                        Do you want to sit outside this summer without annoying mosquitoes and cook a barbecue 🍖 or drink a cup of coffee ☕️ or sit with your loved ones and friends 👩‍❤️‍💋‍👨, my candles are organic 🌿 and will make your summer beautiful ☀️ without mosquitoes 👍 <br/>
+                        - 200 ml. <br/>
+                        - Natural soy wax from the USA. <br/>
+                        - A special blend of mosquito repellent scents made in France. <br/>
+                        - The candle burns for 40 hours. <br/>
+                        - Price SEK 250. <br/>
+                    `,
+                    sw: `
+                        Nyheter❗️ <br/>
+                        Vill du sitta ute i sommar utan irriterande mygg och laga en grillfest 🍖 eller dricka en kopp kaffe ☕️ eller sitta med dina nära och kära och vänner 👩‍❤️‍💋‍👨, mina ljus är ekologiska 🌿 och kommer att göra din sommar vacker ☀️ utan mygg 👍 <br/>
+                        - 200 ml. <br/>
+                        - Naturligt sojavax från USA. <br/>
+                        - En speciell blandning av myggavvisande dofter tillverkad i Frankrike. <br/>
+                        – Ljuset brinner i 40 timmar. <br/>
+                        - Pris 250 kr. <br/>
                     `,
                 }
             },
@@ -601,7 +628,8 @@ const app = createApp(mainComponent)
             <div class="selected-product-detail-image-holder">
                 <img :src="product.img" alt="">
             </div>
-            <div class="d-flex flex-column ms-md-4">
+            
+            <div class="d-flex flex-column ms-md-4 selected-product-detail-description-holder">
                 <div class="selected-product-detail-name col-12 justify-content-start">
                     {{product.name}}
                 </div>

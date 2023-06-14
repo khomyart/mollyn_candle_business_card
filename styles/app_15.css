@@ -64,7 +64,7 @@ body {
     height: 100%;
 }
 .background-image {
-    background-image: url("/assets/tileless_background_1_colored.png");
+    background-image: url("/assets/converted/tileless_background_1_colored.png");
     background-size: 150px;
     opacity: 0.2;
     z-index: 5;
@@ -245,7 +245,7 @@ body {
 }
 
 .about-us-background-image {
-    background-image: url('/assets/winter_lake.jpg');
+    background-image: url('/assets/converted/winter_lake.jpg');
     background-position: left;
     background-repeat: no-repeat;
     background-size: cover;
@@ -439,19 +439,19 @@ body {
     z-index: -1;
 }
 .flame-1 {
-    background-image: url("/assets/flame_tileless.png");
+    background-image: url("/assets/converted/flame_tileless.png");
     background-position: bottom;
     background-size: var(--flame-size);
     background-repeat: repeat-x;
 }
 .flame-2 {
-    background-image: url("/assets/flame2_tileless.png");
+    background-image: url("/assets/converted/flame2_tileless.png");
     background-position: bottom;
     background-size: var(--flame-size);
     background-repeat: repeat-x;
 }
 .flame-3 {
-    background-image: url("/assets/flame3_tileless.png");
+    background-image: url("/assets/converted/flame3_tileless.png");
     background-position: bottom;
     background-size: var(--flame-size);
     background-repeat: repeat-x;
@@ -688,20 +688,24 @@ body {
     padding: 15px;
 }
 .selected-product-detail-image-holder {
-    min-width: 230px;
-    min-height: 230px;
-    max-width: 300px;
-    max-height: 300px;
+    min-width: 300px;
+    min-height: 300px;
+    width: 300px;
+    height: 300px;
     overflow: hidden;
     border-radius: 15px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 0.75em;
+    background-color: antiquewhite;
 }
-.selected-product-detail-image-holder img {
+.selected-product-detail-image-holder>img {
     width: 100%;
     height: auto;
+}
+.selected-product-detail-description-holder {
+    flex: 1 1 auto;
 }
 .selected-product-detail-name {
     margin-top: 0.75em;
