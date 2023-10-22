@@ -39,11 +39,11 @@ const mainComponent = {
             },
             {
                 name: "different shapes",
-                imgSrc: "./assets/description-menu/converted/different_forms.png",
+                imgSrc: "./assets/description-menu/converted/different_forms_2.png",
             },
             {
                 name: "ecologically clean and safe raw materials",
-                imgSrc: "./assets/description-menu/converted/eco.png",
+                imgSrc: "./assets/description-menu/converted/eco_2.png",
             },
             {
                 name: "fragrances of the highest quality",
@@ -141,58 +141,125 @@ const mainComponent = {
                     en: "Serenity of the sea",
                     sw: "Havets lugn",
                 },
-                img: "./assets/products/rakushkas.jpg",
+                img: "./assets/products/rakushkas2.jpg",
                 description: {
                     en: `
-                        These oyster candles are made for a date with your soul 🌟. <br/>
-                        They make an attractive table decoration, a thoughtful gift or an original decoration for your home. <br/>
-                        -Natural soy wax from the USA.<br/>
-                        -A fragrance of the highest quality, produced in France.<br/>
-                        -Natural oyster shells (which have undergone all the heat treatment before they end up in the wax).<br/>
-                        -Our packaging will not leave anyone untouched.<br/>
-                        -Set of two oysters 100 SEK<br/>
-                    
-                        The sea highlights the beauty that we preserve in our soy-based candles ... <br/>
-                        Dive into the scent of the sea 🤍<br/>
+                        These oyster candles are made for a date with the soul 🌟. </br>
+                        They will be an attractive table decoration, a thoughtful gift or an original home decoration.
+                        - Natural soy wax from the USA. </br>
+                        - Aroma of the highest quality, production France. </br>
+                        - Natural oyster shells (heat treated before entering the wax). </br>
+                        -Our packaging will not leave anyone untouched. </br>
+                        - Set oysters + santo palo SEK 290. </br>
+                        The sea highlights the beauty we preserve in our soy candles... </br>
+                        </br>
+                        Immerse yourself in the scent of the sea 🤍
                     `,
                     sw: `
-                        Dessa ostronljus är gjorda för en dejt med din själ 🌟. <br/>
-                        De blir en attraktiv bordsdekoration, en omtänksam gåva eller en originell dekoration för ditt hem. <br/>
-                        -Naturligt sojavax från USA.<br/>
-                        -En doft av högsta kvalitet, producerad i Frankrike.<br/>
-                        -Naturliga ostronskal (som har genomgått all värmebehandling innan de hamnar i vaxet).<br/>
-                        -Vår förpackning kommer inte att lämna någon oberörd.<br/>
-                        -Set med två ostron 100 SEK<br/>
-
-                        Havet framhäver den skönhet som vi bevarar i våra sojabaserade ljus ... <br/>
-                        Dyk ned i havets doft 🤍<br/>
+                        Dessa ostronljus är gjorda för en dejt med själen 🌟. </br>
+                        De kommer att vara en attraktiv bordsdekoration, en tankeväckande present eller en original heminredning.
+                        - Naturligt sojavax från USA. </br>
+                        - Aroma av högsta kvalitet, produktion Frankrike. </br>
+                        - Naturliga ostronskal (värmebehandlade innan de går in i vaxet). </br>
+                        -Vår förpackning kommer inte att lämna någon oberörd. </br>
+                        - Set ostron + santo palo 290 SEK. </br>
+                        Havet framhäver skönheten vi bevarar i våra sojaljus... </br>
+                        </br>
+                        Fördjupa dig i doften av havet 🤍 
+                    `,
+                }
+            },
+            //komarics
+            // {
+            //     name: {
+            //         en: "Mosquito-Free Bliss",
+            //         sw: "Myggfri Bliss",
+            //     },
+            //     img: "./assets/products/anti-mosquito.jpg",
+            //     description: {
+            //         en: `
+            //             News❗️ <br/>
+            //             Do you want to sit outside this summer without annoying mosquitoes and cook a barbecue 🍖 or drink a cup of coffee ☕️ or sit with your loved ones and friends 👩‍❤️‍💋‍👨, my candles are organic 🌿 and will make your summer beautiful ☀️ without mosquitoes 👍 <br/>
+            //             - 200 ml. <br/>
+            //             - Natural soy wax from the USA. <br/>
+            //             - A special blend of mosquito repellent scents made in France. <br/>
+            //             - The candle burns for 40 hours. <br/>
+            //             - Price SEK 250. <br/>
+            //         `,
+            //         sw: `
+            //             Nyheter❗️ <br/>
+            //             Vill du sitta ute i sommar utan irriterande mygg och laga en grillfest 🍖 eller dricka en kopp kaffe ☕️ eller sitta med dina nära och kära och vänner 👩‍❤️‍💋‍👨, mina ljus är ekologiska 🌿 och kommer att göra din sommar vacker ☀️ utan mygg 👍 <br/>
+            //             - 200 ml. <br/>
+            //             - Naturligt sojavax från USA. <br/>
+            //             - En speciell blandning av myggavvisande dofter tillverkad i Frankrike. <br/>
+            //             – Ljuset brinner i 40 timmar. <br/>
+            //             - Pris 250 kr. <br/>
+            //         `,
+            //     }
+            // },
+            {
+                name: {
+                    en: "Fresh scent",
+                    sw: "Fräsch doft",
+                },
+                img: "./assets/products/fresh_aromat.jpg",
+                description: {
+                    en: `
+                        Innovative scented candles with jasmine and apple sound very tempting. Jasmine and apple are two different but pleasant scents that can create a cozy and relaxing atmosphere in a room.<br/>
+                        The scent of jasmine is usually associated with tenderness, romance and tranquility. It helps to relax and relieve stress, while the scent of apple is usually associated with freshness and comfort. It makes the room feel fresh and cosy.<br/>
+                        Enjoy the soft and pleasant scent☺️<br/>
+                        <br/>
+                        ✔️Burning time 30 hours ⏱️<br/>
+                        ✔️Natural soy wax 🌿<br/>
+                        ✔️160 ml 🫙<br/>
+                        ✔️Price SEK 180<br/>
+                    `,
+                    sw: `
+                        Innovativa doftljus med jasmin och äpple låter väldigt lockande. Jasmin och äpple är två olika men behagliga dofter som kan skapa en mysig och avkopplande atmosfär i ett rum.<br/>
+                        Doften av jasmin förknippas vanligtvis med ömhet, romantik och lugn. Den hjälper till att slappna av och lindra stress, medan doften av äpple vanligtvis förknippas med friskhet och komfort. Den får rummet att kännas fräscht och mysigt.<br/>
+                        Njut av den mjuka och behagliga doften☺️<br/>
+                        <br/>
+                        ✔️Brinntid 30 timmar ⏱️<br/>
+                        ✔️Naturligt sojavax 🌿<br/>
+                        ✔️160 ml 🫙<br/>
+                        ✔️Pris 180 SEK<br/>
                     `,
                 }
             },
             {
                 name: {
-                    en: "Mosquito-Free Bliss",
-                    sw: "Myggfri Bliss",
+                    en: "Rhuberry Delight",
+                    sw: "Rhuberry Delight",
                 },
-                img: "./assets/products/anti-mosquito.jpg",
+                img: "./assets/products/billberry.jpg",
                 description: {
                     en: `
-                        News❗️ <br/>
-                        Do you want to sit outside this summer without annoying mosquitoes and cook a barbecue 🍖 or drink a cup of coffee ☕️ or sit with your loved ones and friends 👩‍❤️‍💋‍👨, my candles are organic 🌿 and will make your summer beautiful ☀️ without mosquitoes 👍 <br/>
-                        - 200 ml. <br/>
-                        - Natural soy wax from the USA. <br/>
-                        - A special blend of mosquito repellent scents made in France. <br/>
-                        - The candle burns for 40 hours. <br/>
-                        - Price SEK 250. <br/>
+                        Every updated scented candle 🕯️</br>
+                        The rhubarb note gives freshness, purity, lightness, transparency
+                        and sparkle to the whole composition
+                        🌿, and the blueberry is
+                        a very good and joyful berry 🫐 that will
+                        create a playful, seductive atmosphere around you and surround yourself with sweetness and lightness 💟</br>
+                        </br>
+                        ✔️200 ml 🫙</br>
+                        ✔️Natural soy wax from the USA 🌿</br>
+                        ✔️Premium fragrances made in France 🇫🇷</br>
+                        ✔️ The candle burns for 45 hours ⏱️</br>
+                        ✔️Price SEK 200 :-)</br>
                     `,
                     sw: `
-                        Nyheter❗️ <br/>
-                        Vill du sitta ute i sommar utan irriterande mygg och laga en grillfest 🍖 eller dricka en kopp kaffe ☕️ eller sitta med dina nära och kära och vänner 👩‍❤️‍💋‍👨, mina ljus är ekologiska 🌿 och kommer att göra din sommar vacker ☀️ utan mygg 👍 <br/>
-                        - 200 ml. <br/>
-                        - Naturligt sojavax från USA. <br/>
-                        - En speciell blandning av myggavvisande dofter tillverkad i Frankrike. <br/>
-                        – Ljuset brinner i 40 timmar. <br/>
-                        - Pris 250 kr. <br/>
+                        Vart uppdaterade doftljus 🕯️</br>
+                        Rabarbernoten ger friskhet, renhet, lätthet, transparens
+                        och gnistra till hela kompositionen
+                        🌿, och blabäret är
+                        ett väldigt gott och glädjefyllt bär 🫐 som kommer att
+                        skapa en lekfull, förförisk atmosfär runt dig och omge dig med sötma och lätthet 💟</br>
+                        </br>
+                        ✔️200 ml 🫙</br>
+                        ✔️Naturligt sojavax från USA 🌿</br>
+                        ✔️Premium dofter tillverkade i Frankrike 🇫🇷</br>
+                        ✔️ Ljuset brinner i 45 timmar ⏱️</br>
+                        ✔️Pris 200 kr :-)</br>
                     `,
                 }
             },
